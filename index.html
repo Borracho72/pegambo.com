@@ -53,6 +53,29 @@ footer{border-top:1px solid var(--line);margin-top:24px}
 .foot{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;padding:24px 0 30px;font-size:14px;color:var(--muted)}
 .foot a{text-decoration:none;border-bottom:1px solid var(--line)}
 .foot a:hover{color:var(--ink);border-color:var(--ink)}
+.work{padding-top:64px;padding-bottom:16px}
+.work h2.sec{font-size:clamp(26px,3vw,34px);letter-spacing:-.02em;font-weight:600;margin-bottom:8px}
+.work .sub{color:var(--muted);max-width:60ch;margin-bottom:28px}
+.cards{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px}
+.tag{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:6px;border:1px solid var(--line);color:var(--accent-ink);margin-bottom:14px}
+.card h3{font-size:21px;font-weight:600;letter-spacing:-.01em;margin-bottom:10px}
+.card p{color:var(--muted);font-size:16px;margin-top:10px}
+.card p strong{color:var(--ink);font-weight:600}
+.stat{display:flex;align-items:center;gap:18px;margin:20px 0 6px;flex-wrap:wrap}
+.stat .big{font-size:56px;line-height:.9;font-weight:600;letter-spacing:-.03em}
+.stat .big small{font-size:24px;color:var(--muted);font-weight:500}
+.stat .cap{font-size:14px;color:var(--muted);max-width:30ch;padding-bottom:4px}
+.bars{display:grid;grid-template-columns:auto 1fr auto;gap:8px 12px;align-items:center;font-family:var(--mono);font-size:13px;margin-top:16px}
+.bar{height:10px;border-radius:5px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ink)}
+.bar.hl i{background:var(--accent)}
+.card p.src{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:14px}
+.src a{border-bottom:1px solid var(--line);text-decoration:none}
+.status{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-size:15px;color:var(--muted)}
+.status b{color:var(--ink);font-weight:600}
+.side{display:grid;gap:20px}
+@media (max-width:860px){.cards{grid-template-columns:1fr}.stat .big{font-size:46px}}
 [data-lang]{display:none}
 html[lang="en"] [data-lang="en"], html[lang="ru"] [data-lang="ru"]{display:revert}
 @media (max-width:860px){
@@ -138,6 +161,41 @@ html[lang="en"] [data-lang="en"], html[lang="ru"] [data-lang="ru"]{display:rever
       <p class="k">03</p>
       <h2><span data-lang="en">Honest stage</span><span data-lang="ru">Честная стадия</span></h2>
       <p><span data-lang="en">We are pre-MVP. We publish what has been measured, not what is hoped for.</span><span data-lang="ru">Мы на стадии pre-MVP. Публикуем то, что измерено, а не то, на что надеемся.</span></p>
+    </div>
+  </section>
+
+  <section class="wrap work" aria-labelledby="work-h">
+    <h2 class="sec" id="work-h"><span data-lang="en">What we are testing now</span><span data-lang="ru">Что мы проверяем сейчас</span></h2>
+    <p class="sub"><span data-lang="en">Two independent lines of evidence. Each has a stated status — including what is not yet proven.</span><span data-lang="ru">Две независимые линии доказательств. У каждой указан статус — в том числе то, что ещё не доказано.</span></p>
+    <div class="cards">
+      <article class="card">
+        <span class="tag"><span data-lang="en">Case study · Singapore</span><span data-lang="ru">Кейс · Сингапур</span></span>
+        <h3><span data-lang="en">Structural weak points of a rail network</span><span data-lang="ru">Структурные слабые места рельсовой сети</span></h3>
+        <p><span data-lang="en">From open data we model Singapore’s MRT/LRT network and screen it for places where a single failure disrupts the largest share of journeys. The screen ranks the Sengkang–Punggol LRT area among the most exposed.</span><span data-lang="ru">По открытым данным мы строим модель сети MRT/LRT Сингапура и ищем места, где один сбой затрагивает наибольшую долю поездок. Наш скрининг относит район Sengkang–Punggol LRT к самым уязвимым.</span></p>
+        <div class="stat">
+          <div class="big">4<small> / 6</small></div>
+          <div class="cap"><span data-lang="en">LRT delays over 30 minutes in 2025 were on the Sengkang–Punggol LRT — operator data, not our model.</span><span data-lang="ru">задержек LRT дольше 30 минут в 2025 году пришлись на Sengkang–Punggol LRT — данные оператора, а не наша модель.</span></div>
+        </div>
+        <div class="bars" role="img" aria-label="2025: Sengkang–Punggol LRT 4, Bukit Panjang LRT 2 delays over 30 minutes">
+          <span>SPLRT</span><span class="bar hl"><i style="width:100%"></i></span><span>4</span>
+          <span>BPLRT</span><span class="bar"><i style="width:50%"></i></span><span>2</span>
+        </div>
+        <p class="src"><span data-lang="en">Source:</span><span data-lang="ru">Источник:</span> <a href="https://www.lta.gov.sg/content/dam/ltagov/who_we_are/statistics_and_publications/statistics/pdf/Annex%E2%80%93Historical_Rail_Service_Reliability_Performance.pdf" target="_blank" rel="noopener">LTA, Historical Rail Service Reliability Performance, Table A3 (updated 13 Mar 2026)</a></p>
+        <p class="status"><b><span data-lang="en">Status:</span><span data-lang="ru">Статус:</span></b> <span data-lang="en">retrospective agreement, not a blind prediction. Next: a backtest against an archive of service disruptions, compared with standard network baselines.</span><span data-lang="ru">совпадение задним числом, не слепой прогноз. Дальше — бэктест на архиве сбоев и сравнение со стандартными сетевыми методами.</span></p>
+      </article>
+      <div class="side">
+        <article class="card">
+          <span class="tag"><span data-lang="en">Benchmark · Max-Cut</span><span data-lang="ru">Бенчмарк · Max-Cut</span></span>
+          <h3><span data-lang="en">Proof Point 1: optimizer quality</span><span data-lang="ru">Proof Point 1: качество оптимизатора</span></h3>
+          <p><span data-lang="en">Pre-registered protocol on public instances (Gset, g05): time-to-solution, fixed stopping rules, and reproduction of known optima before any claim.</span><span data-lang="ru">Заранее зарегистрированный протокол на публичных наборах (Gset, g05): время до решения, фиксированные критерии остановки и воспроизведение известных оптимумов до любых заявлений.</span></p>
+          <p class="status"><b><span data-lang="en">Status:</span><span data-lang="ru">Статус:</span></b> <span data-lang="en">protocol fixed; results will be published here, whatever they are.</span><span data-lang="ru">протокол зафиксирован; результаты будут опубликованы здесь, какими бы они ни были.</span></p>
+        </article>
+        <article class="card">
+          <span class="tag"><span data-lang="en">Negative result</span><span data-lang="ru">Отрицательный результат</span></span>
+          <h3><span data-lang="en">What did not work</span><span data-lang="ru">Что не сработало</span></h3>
+          <p><span data-lang="en">On Helsinki (HSL) data, network structure alone did not predict delays better than a simple trip-count baseline. We keep it on record.</span><span data-lang="ru">На данных Хельсинки (HSL) структура сети сама по себе предсказывала задержки не лучше простого базового метода по числу поездок. Мы фиксируем это открыто.</span></p>
+        </article>
+      </div>
     </div>
   </section>
 </main>
