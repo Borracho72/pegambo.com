@@ -67,9 +67,9 @@ footer{border-top:1px solid var(--line);margin-top:24px}
 .stat .big small{font-size:24px;color:var(--muted);font-weight:500}
 .stat .cap{font-size:14px;color:var(--muted);max-width:30ch;padding-bottom:4px}
 .bars{display:grid;grid-template-columns:auto 1fr auto;gap:8px 12px;align-items:center;font-family:var(--mono);font-size:13px;margin-top:16px}
-.bar{height:10px;border-radius:5px;background:var(--line);overflow:hidden}
-.bar i{display:block;height:100%;background:var(--ink)}
-.bar.hl i{background:var(--accent)}
+.meter{height:10px;border-radius:5px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;background:var(--ink)}
+.meter.hl i{background:var(--accent)}
 .card p.src{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:14px}
 .src a{border-bottom:1px solid var(--line);text-decoration:none}
 .status{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-size:15px;color:var(--muted)}
@@ -177,8 +177,8 @@ html[lang="en"] [data-lang="en"], html[lang="ru"] [data-lang="ru"]{display:rever
           <div class="cap"><span data-lang="en">LRT delays over 30 minutes in 2025 were on the Sengkang–Punggol LRT — operator data, not our model.</span><span data-lang="ru">задержек LRT дольше 30 минут в 2025 году пришлись на Sengkang–Punggol LRT — данные оператора, а не наша модель.</span></div>
         </div>
         <div class="bars" role="img" aria-label="2025: Sengkang–Punggol LRT 4, Bukit Panjang LRT 2 delays over 30 minutes">
-          <span>SPLRT</span><span class="bar hl"><i style="width:100%"></i></span><span>4</span>
-          <span>BPLRT</span><span class="bar"><i style="width:50%"></i></span><span>2</span>
+          <span>SPLRT</span><span class="meter hl"><i style="width:100%"></i></span><span>4</span>
+          <span>BPLRT</span><span class="meter"><i style="width:50%"></i></span><span>2</span>
         </div>
         <p class="src"><span data-lang="en">Source:</span><span data-lang="ru">Источник:</span> <a href="https://www.lta.gov.sg/content/dam/ltagov/who_we_are/statistics_and_publications/statistics/pdf/Annex%E2%80%93Historical_Rail_Service_Reliability_Performance.pdf" target="_blank" rel="noopener">LTA, Historical Rail Service Reliability Performance, Table A3 (updated 13 Mar 2026)</a></p>
         <p class="status"><b><span data-lang="en">Status:</span><span data-lang="ru">Статус:</span></b> <span data-lang="en">retrospective agreement, not a blind prediction. Next: a backtest against an archive of service disruptions, compared with standard network baselines.</span><span data-lang="ru">совпадение задним числом, не слепой прогноз. Дальше — бэктест на архиве сбоев и сравнение со стандартными сетевыми методами.</span></p>
