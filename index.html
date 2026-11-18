@@ -118,7 +118,7 @@ html[lang="en"] [data-lang="en"], html[lang="ru"] [data-lang="ru"]{display:rever
         <span data-lang="ru">PeGamBo разрабатывает собственный AI-native движок оптимизации, который работает на обычном оборудовании, — практичную классическую альтернативу для задач, которые часто относят к будущим квантовым вычислениям.</span>
       </p>
       <div class="cta">
-        <a class="btn" href="mailto:hello@pegambo.com">hello@pegambo.com <span aria-hidden="true">→</span></a>
+        <a class="btn js-mail" href="#contact" data-u="olleh" data-d="moc.obmagep"><span class="js-mail-text">hello [at] pegambo.com</span> <span aria-hidden="true">→</span></a>
         <span class="note"><span data-lang="en">Full site coming soon</span><span data-lang="ru">Полный сайт — скоро</span></span>
       </div>
     </div>
@@ -203,7 +203,7 @@ html[lang="en"] [data-lang="en"], html[lang="ru"] [data-lang="ru"]{display:rever
 <footer>
   <div class="wrap foot">
     <span>© 2026 PeGamBo · <span data-lang="en">Founder: Oleg Bortnikov</span><span data-lang="ru">Основатель: Олег Бортников</span></span>
-    <span><a href="mailto:hello@pegambo.com">hello@pegambo.com</a> · <a href="https://orcid.org/0009-0004-6221-5389" rel="noopener" target="_blank">ORCID</a></span>
+    <span><a class="js-mail" href="#contact" data-u="olleh" data-d="moc.obmagep"><span class="js-mail-text">hello [at] pegambo.com</span></a> · <a href="https://orcid.org/0009-0004-6221-5389" rel="noopener" target="_blank">ORCID</a></span>
   </div>
 </footer>
 
@@ -215,6 +215,16 @@ html[lang="en"] [data-lang="en"], html[lang="ru"] [data-lang="ru"]{display:rever
   var q=(location.search.match(/lang=(en|ru)/)||[])[1];
   set(q||((navigator.language||'').toLowerCase().indexOf('ru')===0?'ru':'en'));
   btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+})();
+</script>
+<script>
+(function(){
+  function rev(s){return s.split('').reverse().join('');}
+  document.querySelectorAll('.js-mail').forEach(function(a){
+    var addr=rev(a.getAttribute('data-u'))+String.fromCharCode(64)+rev(a.getAttribute('data-d'));
+    a.setAttribute('href','mai'+'lto:'+addr);
+    var s=a.querySelector('.js-mail-text'); if(s) s.textContent=addr;
+  });
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "65e535b5e087427fa662f7d919895b83"}'></script><!-- End Cloudflare Web Analytics -->
