@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Dark Sector as Bookkeeping: Four Measurable Properties Instead of a Name — PeGamBo</title>
+<!-- meta:start -->
+<meta name="description" content="Cosmology has measured the contribution of dark matter and dark energy to percent-level precision. What they are remains an open question, and this note is not about it. It is about a…">
+<link rel="canonical" href="https://pegambo.com/research/dark-ledger/">
+<link rel="alternate" hreflang="en" href="https://pegambo.com/research/dark-ledger/?lang=en">
+<link rel="alternate" hreflang="ru" href="https://pegambo.com/research/dark-ledger/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://pegambo.com/research/dark-ledger/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PeGamBo">
+<meta property="og:url" content="https://pegambo.com/research/dark-ledger/">
+<meta property="og:title" content="The Dark Sector as Bookkeeping: Four Measurable Properties Instead of a Name">
+<meta property="og:description" content="Cosmology has measured the contribution of dark matter and dark energy to percent-level precision. What they are remains an open question, and this note is not about it. It is about a…">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="article:published_time" content="2026-10-28">
+<meta property="article:modified_time" content="2026-11-19">
+<meta property="article:author" content="Oleg Bortnikov">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Oleg Bortnikov">
+<meta name="citation_title" content="Тёмный сектор как бухгалтерия: четыре измеримых свойства вместо имени">
+<meta name="citation_author" content="Bortnikov, Oleg">
+<meta name="DC.title" lang="en" content="The Dark Sector as Bookkeeping: Four Measurable Properties Instead of a Name">
+<meta name="citation_publication_date" content="2026/11/19">
+<meta name="citation_language" content="ru">
+<meta name="citation_doi" content="10.5281/zenodo.24372606">
+<meta name="DC.identifier" content="doi:10.5281/zenodo.24372606">
+<meta name="citation_publisher" content="PeGamBo">
+<meta name="citation_public_url" content="https://pegambo.com/research/dark-ledger/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Тёмный сектор как бухгалтерия: четыре измеримых свойства вместо имени", "inLanguage": "ru", "alternativeHeadline": "The Dark Sector as Bookkeeping: Four Measurable Properties Instead of a Name", "datePublished": "2026-10-28", "dateModified": "2026-11-19", "version": "2", "url": "https://pegambo.com/research/dark-ledger/", "author": {"@type": "Person", "name": "Oleg Bortnikov", "alternateName": "Олег Бортников", "sameAs": "https://orcid.org/0009-0004-6221-5389"}, "publisher": {"@type": "Organization", "name": "PeGamBo", "url": "https://pegambo.com/"}, "description": "Космология измерила вклад тёмной материи и тёмной энергии с процентной точностью. Что они такое — вопрос открытый, и эта заметка не о нём. Она о тёмном секторе попроще, который каждый…", "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.5281/zenodo.24372606", "url": "https://doi.org/10.5281/zenodo.24372606"}, "sameAs": "https://doi.org/10.5281/zenodo.24372606"}</script>
+<!-- meta:end -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111a1f'/%3E%3Ccircle cx='10' cy='11' r='3' fill='%23e8b04a'/%3E%3Ccircle cx='22' cy='9' r='2.4' fill='%23f2efe8'/%3E%3Ccircle cx='17' cy='22' r='3.2' fill='%23f2efe8'/%3E%3Cpath d='M10 11 22 9 17 22Z' fill='none' stroke='%23f2efe8' stroke-width='1.2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2efe8; --ink:#111a1f; --muted:#5d6a70; --line:#d6d1c5; --accent:#b7791f; --accent-ink:#8a5a12;
+  --panel:#ebe7dd;
+  --sans:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --measure:40rem;
+}
+html[lang="en"]{--measure:37.5rem}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 28px}
+header{border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-weight:700;letter-spacing:-.01em;font-size:19px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand svg{width:26px;height:26px}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;font-family:var(--mono);font-size:13px}
+.lang button{border:0;background:transparent;color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer;font:inherit}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.lang button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{flex:1}
+footer{border-top:1px solid var(--line);margin-top:24px}
+.foot{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;padding:24px 0 30px;font-size:14px;color:var(--muted)}
+.foot a{text-decoration:none;border-bottom:1px solid var(--line)}
+.foot a:hover{color:var(--ink);border-color:var(--ink)}
+[data-lang]{display:none}
+html[lang="en"] [data-lang="en"], html[lang="ru"] [data-lang="ru"]{display:revert}
+
+/* ---------- note ---------- */
+main.note-page{padding-top:40px;padding-bottom:56px}
+.crumbs{max-width:var(--measure);margin:0 auto 40px;font-family:var(--mono);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.crumbs a{text-decoration:none;border-bottom:1px solid var(--line)}
+.crumbs a:hover{color:var(--ink);border-color:var(--ink)}
+.crumbs .sep{color:var(--line)}
+.paper{max-width:var(--measure);margin:0 auto}
+.paper-kicker{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.paper-kicker{flex-wrap:wrap;column-gap:.4em;row-gap:2px}.paper-kicker .ks{white-space:nowrap}
+.paper-kicker i{margin-right:calc(10px - .4em)}
+.paper-kicker i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
+.prose{font-size:18px;line-height:1.68;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word;font-variant-numeric:lining-nums tabular-nums}
+.prose h1{font-size:clamp(30px,4.4vw,46px);line-height:1.1;letter-spacing:-.022em;font-weight:600;hyphens:manual;-webkit-hyphens:manual;text-wrap:balance}
+.prose .byline{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:13.5px;line-height:1.7;color:var(--muted);hyphens:manual;-webkit-hyphens:manual}
+.prose .byline .seg{white-space:nowrap}
+@media (max-width:420px){.prose .byline .seg{white-space:normal}}
+.prose .byline strong{font-family:var(--sans);font-size:16px;font-weight:600;color:var(--ink)}
+.prose hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+.prose .byline+hr{margin-top:20px}
+.prose .doiline{margin-top:8px;font-family:var(--mono);font-size:13.5px;color:var(--muted)}
+.prose .doiline .k{color:var(--accent-ink);letter-spacing:.06em;margin-right:4px}
+.prose .doiline a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.prose .doiline+hr{margin-top:20px}
+.prose p{margin:0 0 1.05em}
+.prose h2{font-size:clamp(23px,2.6vw,28px);line-height:1.22;letter-spacing:-.015em;font-weight:600;margin:2.1em 0 .7em;hyphens:manual;-webkit-hyphens:manual;scroll-margin-top:24px;text-wrap:balance}
+.prose h3{font-size:20px;line-height:1.3;font-weight:600;margin:1.7em 0 .5em}
+.prose h2 .hn{font-family:var(--mono);font-weight:500;font-size:.62em;color:var(--accent-ink);letter-spacing:.02em;vertical-align:.18em;margin-right:.65em}
+.prose h2 .anchor{margin-left:.4em;font-family:var(--mono);font-size:.6em;color:var(--line);text-decoration:none;opacity:0;transition:opacity .15s}
+.prose h2:hover .anchor,.prose h2 .anchor:focus-visible{opacity:1;color:var(--accent-ink)}
+.prose strong{font-weight:600}
+.prose em{font-style:italic}
+.prose a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+.prose a:hover{text-decoration-thickness:2px}
+.prose a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.prose ul,.prose ol{margin:0 0 1.2em;padding-left:1.4em}
+.prose li{margin:.45em 0;padding-left:.25em}
+.prose ul>li::marker{color:var(--accent)}
+.prose ol>li::marker{font-family:var(--mono);font-size:.82em;color:var(--accent-ink)}
+.prose sup,.prose sub{font-size:.72em;line-height:0;position:relative;vertical-align:baseline}
+.prose sup{top:-.5em}.prose sub{bottom:-.25em}
+.prose code{font-family:var(--mono);font-size:.86em;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:.05em .35em;white-space:nowrap}
+.prose pre{font-family:var(--mono);font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;overflow-x:auto;margin:0 0 1.2em;line-height:1.5}
+.prose pre code{background:none;border:0;padding:0;white-space:pre}
+.prose blockquote{margin:0 0 1.2em;padding:2px 0 2px 20px;border-left:2px solid var(--line);color:var(--muted)}
+/* guard / caveat */
+.prose .guard{margin:-.2em 0 1.4em;padding:14px 18px 14px 18px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px 10px 10px 4px;font-size:15.5px;line-height:1.6;color:#3b474d}
+.prose .guard p{margin:0}
+.prose .guard p+p{margin-top:.6em}
+.prose .guard .glabel{display:block;font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:4px}
+/* verification status */
+.prose section.verify{margin:2.2em 0 1.6em;padding:22px 24px 8px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.prose section.verify>h2:first-child{margin-top:0;font-size:20px}
+.prose section.verify>p,.prose section.verify li{font-size:16px}
+.prose p.verify{margin:-.3em 0 1.5em;padding:12px 0 0;border-top:1px dashed var(--line);font-size:15.5px;line-height:1.6;color:var(--muted)}
+.prose p.verify .vlabel{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-weight:600;margin-right:.2em}
+.prose p.verify .vlabel::before{content:"";width:7px;height:7px;border-radius:50%;border:1.5px solid var(--ink);flex:none;transform:translateY(-1px)}
+.prose .guard+p.verify{margin-top:-.4em}
+/* tables */
+.tbl{overflow-x:auto;margin:0 0 1.6em;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.tbl.wide{position:relative;width:min(880px,calc(100vw - 56px));left:50%;transform:translateX(-50%)}
+.prose table.cols3 th:nth-child(1){width:29%}.prose table.cols3 th:nth-child(2){width:27%}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.45}
+.prose th,.prose td{padding:9px 12px 9px 0;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.prose tr:last-child td{border-bottom:0}
+.prose td{overflow-wrap:break-word;hyphens:auto}
+.prose th{font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.02em;color:var(--muted);border-bottom:1px solid var(--ink)}
+.prose td.num,.prose th.num{font-family:var(--mono);font-size:14px;text-align:right;white-space:nowrap;padding-left:12px}
+/* references */
+.prose ol.refs{padding-left:2.2em;font-size:15.5px;line-height:1.55;hyphens:manual;-webkit-hyphens:manual}
+.prose ol.refs li{margin:.6em 0;scroll-margin-top:24px;border-radius:4px;transition:background .3s}
+.prose ol.refs li:target{background:#f7e7c6;box-shadow:0 0 0 6px #f7e7c6}
+.prose a.cite-ref{text-decoration:none;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.prose a.cite-ref:hover{text-decoration:underline}
+.prose ol.refs a{overflow-wrap:break-word}
+.prose .footnote{margin-top:2.5em;font-size:15px;color:var(--muted)}
+.prose .footnote hr{margin:0 0 1em}
+.prose .footnote-ref,.prose .footnote-backref{text-decoration:none;font-family:var(--mono)}
+/* colophon */
+.prose .colophon{margin-top:8px;font-size:15px;line-height:1.6;color:var(--muted)}
+.prose .colophon em{font-style:italic}
+.paper-foot{max-width:var(--measure);margin:48px auto 0;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.paper-foot a{text-decoration:none;border-bottom:1px solid var(--line)}
+.paper-foot a:hover{color:var(--ink);border-color:var(--ink)}
+.cite{max-width:var(--measure);margin:28px auto 0;font-size:14px;color:var(--muted)}
+.cite .k{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:6px}
+.cite p{font-family:var(--mono);font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.nojs-sep{display:none}
+/* repro page */
+main.repro-page{--measure:46rem}
+.repro{max-width:46rem;margin:0 auto}
+.repro h1{font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.022em;font-weight:600}
+.repro .lead{margin-top:16px;font-size:18px;line-height:1.6;color:var(--muted);max-width:40rem}
+.repro .lead a,.repro .rsec a.back{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.repro .meta{margin-top:18px;font-family:var(--mono);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
+.repro .meta a{border-bottom:1px solid var(--line);text-decoration:none}
+.rsec{margin-top:44px}
+.rsec h2{font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+.rsec .k{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px}
+.rsec .desc{color:var(--muted);font-size:16px;margin-bottom:14px;max-width:40rem}
+.files{list-style:none;border-top:1px solid var(--ink)}
+.files li{border-bottom:1px solid var(--line)}
+.files a{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:baseline;padding:11px 0;text-decoration:none}
+.files .fn{font-family:var(--mono);font-size:14px;overflow-wrap:break-word;min-width:0}
+.files .fn .dir{color:var(--muted)}
+.files .fs{font-family:var(--mono);font-size:12.5px;color:var(--muted);white-space:nowrap}
+.files a:hover .fn{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.files a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.files .empty{padding:14px 0;color:var(--muted);font-size:15px}
+.readme{margin-top:14px}
+.readme summary{cursor:pointer;font-family:var(--mono);font-size:13px;color:var(--accent-ink)}
+.readme pre{margin-top:10px;font-family:var(--mono);font-size:13px;line-height:1.55;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:28rem;overflow:auto}
+.zip{margin-top:22px;display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--bg);text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:500;font-size:15px}
+.zip:hover{background:#24323a}.zip small{font-family:var(--mono);font-size:12px;opacity:.75;white-space:nowrap}
+
+@media (max-width:420px){.files .fn{font-size:13px}.zip{display:flex;flex-wrap:wrap;gap:2px 10px}}
+@media (max-width:960px){.tbl.wide{width:auto;left:auto;transform:none}}
+@media (max-width:600px){
+  .tbl{overflow:visible;border:0}
+  .prose table.cards,.prose table.cards tbody,.prose table.cards tr,.prose table.cards td{display:block;width:auto}
+  .prose table.cards thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .prose table.cards tr{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:4px 14px;margin:0 0 12px}
+  .prose table.cards td{border-bottom:1px dashed var(--line);padding:9px 0;text-align:left;white-space:normal;font-family:var(--sans);font-size:15px}
+  .prose table.cards td:last-child{border-bottom:0}
+  .prose table.cards td::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--accent-ink);margin-bottom:2px}
+}
+@media (max-width:860px){main.note-page{padding-top:28px}.crumbs{margin-bottom:28px}}
+@media (max-width:600px){.paper-foot .kbd{display:none}}
+@media (max-width:420px){
+  .wrap{padding:0 20px}
+  .prose{font-size:17px;line-height:1.64}
+  .prose .guard{padding:12px 14px;font-size:15px}
+  .prose .verify{padding:18px 16px 6px}
+  .prose ul,.prose ol{padding-left:1.2em}
+}
+
+@media print{
+  @page{margin:18mm 18mm 20mm}
+  :root{--bg:#fff;--panel:#f6f4ef;--muted:#444;--line:#bbb}
+  body{background:#fff;font-size:11pt;display:block}
+  header .lang,.crumbs,.paper-foot,footer .foot>span:last-child,.prose h2 .anchor{display:none!important}
+  header{border-bottom:1px solid #999}
+  .bar{height:auto;padding:0 0 8px}
+  .wrap{max-width:none;padding:0}
+  main.note-page{padding:18px 0 0}
+  .paper,.cite{max-width:none}
+  .prose{font-size:11pt;line-height:1.5}
+  .prose h1{font-size:22pt}
+  .prose h2{font-size:14pt;margin-top:1.4em;break-after:avoid;page-break-after:avoid}
+  .cite,.prose .guard,.prose .verify,.prose li{break-inside:avoid;page-break-inside:avoid}
+  .prose p{orphans:3;widows:3}
+  .prose a[href^="http"]::after{content:" <" attr(href) ">";font-family:var(--mono);font-size:8.5pt;color:#555;overflow-wrap:anywhere}
+  .prose .guard{font-size:10pt}
+  .tbl,.tbl.wide{overflow:visible!important;width:auto!important;left:auto!important;transform:none!important}
+  .prose table{font-size:8.5pt;table-layout:fixed}
+  .prose td,.prose th{padding:5px 8px 5px 0}
+  .prose tr{break-inside:avoid;page-break-inside:avoid}
+  .prose thead{display:table-header-group}
+  .prose ol.refs{font-size:9.5pt}
+  .prose ol.refs a[href^="http"]::after,.prose a.bare::after,.prose a[href^="#"]::after{content:none}
+  .prose .doiline a::after{content:none}
+  .files a::after{content:none}
+  footer{margin-top:20px;border-top:1px solid #999}
+  .foot{padding:8px 0 0;font-size:9pt}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+<noscript><style>
+/* Without JS: both language versions of the article are shown, EN first, then RU. */
+.paper[data-lang]{display:block}
+.nojs-sep{display:block;max-width:var(--measure);margin:56px auto;border-top:1px dashed var(--line);padding-top:10px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+header .lang{display:none}
+</style></noscript>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand js-keep-lang" href="../../" aria-label="PeGamBo">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#111a1f"/><circle cx="10" cy="11" r="3" fill="#e8b04a"/><circle cx="22" cy="9" r="2.4" fill="#f2efe8"/><circle cx="17" cy="22" r="3.2" fill="#f2efe8"/><path d="M10 11 22 9 17 22Z" fill="none" stroke="#f2efe8" stroke-width="1.2"/></svg>
+      PeGamBo
+    </a>
+    <div class="lang" role="group" aria-label="Language / Язык">
+      <button type="button" data-set="en" aria-pressed="true">EN</button>
+      <button type="button" data-set="ru" aria-pressed="false">RU</button>
+    </div>
+  </div>
+</header>
+
+<!-- main:start -->
+<main class="wrap note-page">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a class="js-keep-lang" href="../../">PeGamBo</a><span class="sep" aria-hidden="true">/</span>
+    <span data-lang="en">Research notes</span><span data-lang="ru">Научные заметки</span>
+  </nav>
+
+  <article class="paper" data-lang="en" lang="en" aria-labelledby="en-title">
+    <p class="paper-kicker"><i aria-hidden="true"></i><span class="ks">Research note ·</span><span class="ks">rev. 2 ·</span><span class="ks"><time datetime="2026-11-19">19 November 2026</time></span></p>
+    <div class="prose">
+<h1 id="en-title">The Dark Sector as Bookkeeping: Four Measurable Properties Instead of a Name</h1>
+<p class="byline"><span class="seg"><strong>Oleg Bortnikov</strong></span> <span class="dot">·</span> <span class="seg">independent researcher</span> <span class="dot">·</span> <span class="seg">PeGamBo measurement workshop</span> <span class="dot">·</span> <span class="seg">pegambo.com</span><br/><span class="seg">Position note</span> <span class="dot">·</span> <span class="seg">revision 2, 19 November 2026</span> <span class="dot">·</span> <span class="seg">first version 28 October 2026</span></p>
+<p class="doiline"><span class="k">DOI</span> <a href="https://doi.org/10.5281/zenodo.24372606" rel="noopener" target="_blank">10.5281/zenodo.24372606</a></p>
+<hr/>
+<p>Cosmology has measured the contribution of dark matter and dark energy to percent-level precision [<a class="cite-ref" href="#en-ref-1">1</a>]. What they are remains an open question, and this note is not about it. It is about a humbler dark sector, the one every researcher creates for themselves: pruned graph edges, distribution tails, terms that "can be neglected", numbers below the threshold of the instrument. <strong>Our thesis: this dark sector is not an entity. It is bookkeeping.</strong> Every entry in the ledger has four fields: weight, charge, instrument margin and a test date.</p>
+<p>We do not claim that this is the same thing as cosmological dark matter and dark energy. We claim something checkable: <strong>what has been thrown away can be measured right now, without a new detector.</strong> Below is one working example for each field. Every number carries a status: what is known from the literature, what we have reproduced with open code, and what remains an internal measurement the reader cannot yet check. In this second revision some numbers of the first version have been corrected; the list of corrections is at the end.</p>
+<h2 id="en-1"><span class="hn">1.</span>Weight<a aria-label="Link to section" class="anchor" href="#en-1">#</a></h2>
+<p>What is cut off does not go to zero. Network science has known this for a long time: weak ties hold the whole together [<a class="cite-ref" href="#en-ref-2">2</a>], and a global weight threshold destroys the multiscale structure of a network [<a class="cite-ref" href="#en-ref-3">3</a>]. Compressed neural networks keep their average accuracy and lose precisely the rare examples [<a class="cite-ref" href="#en-ref-4">4</a>]. We ask the same question with a number, before the cut.</p>
+<p>In our graph models, the edges removed during "simplification" turned out to be invisible to diffusion (two-slit test: contribution to propagation 0.0000), yet they held <strong>99.4% of the curvature charge</strong> and <strong>99.3% of the holonomy</strong>. The residual of the layer beyond the cut, κ∞ = <strong>0.246</strong>, is not zero.</p>
+<p>Whenever data are cleaned, what is about to be discarded has a weight that can be measured beforehand. In practice, this is rarely done.</p>
+<aside class="guard" role="note"><p><span class="glabel">Guard:</span> the numbers describe our models, not the Universe; any transfer requires direct testing, not analogy.</p></aside>
+<p class="verify" role="note"><span class="vlabel">Verification status:</span> internal measurement. The models and the definitions of "curvature charge" and "holonomy" are not yet published, so from the outside this is a claim, not a checkable result.</p>
+<h2 id="en-2"><span class="hn">2.</span>Charge<a aria-label="Link to section" class="anchor" href="#en-2">#</a></h2>
+<p>The dark can carry charge. At a simple zero of a complex wave field the intensity vanishes and the phase is undefined; on a small loop around the zero it winds by ±2π. The zero has a <strong>quantized topological charge of ±1</strong> [<a class="cite-ref" href="#en-ref-5">5</a>]. The density of such zeros in a random wave and their pair correlations were derived by Berry and Dennis [<a class="cite-ref" href="#en-ref-6">6</a>]; the sign anticorrelation of nearest neighbours has been known since 1994 [<a class="cite-ref" href="#en-ref-7">7</a>]; nearest-neighbour distances have also been computed numerically [<a class="cite-ref" href="#en-ref-8">8</a>]; and the dynamics of ensembles of zeros have been measured experimentally [<a class="cite-ref" href="#en-ref-9">9</a>]. These are not our laws. We reproduced them as a calibration of our own tooling, on an ensemble of <strong>463,113</strong> zeros in 64 independent realizations of a two-dimensional isotropic monochromatic Gaussian wave:</p>
+<ul>
+<li>close same-sign pairs are statistically suppressed: the pair correlation of same-sign zeros is g<sub>same</sub>(r) ≈ 1.80·(r/λ)<sup>3</sup> as r → 0. At r = 0.1λ theory gives <strong>0.0019</strong>; our count in the bin 0.09–0.11λ gives 0.0024 ± 0.0008 (one standard error);</li>
+<li>for <strong>78.7%</strong> of zeros the nearest neighbour has the opposite sign (standard error 0.1 percentage points); the most frequent nearest-neighbour distance, irrespective of sign, is about 0.46λ;</li>
+<li>when the zero sets of m independent realizations are pooled, the deviation of the pair correlation from the Poisson baseline at fixed r/λ falls by exactly a factor of m: g<sub>m</sub>(r) − 1 = (g<sub>1</sub>(r) − 1)/m. The pattern tends to Poisson.</li>
+</ul>
+<p>The dark is not empty: it is charged and ordered. For the ledger this means something simple: zero amplitude is not zero information.</p>
+<aside class="guard" role="note"><p><span class="glabel">Guard:</span> this is an idealized null model (the Berry model), not data from a specific instrument. "Suppressed" describes the spatial statistics of the zeros, not forces between them.</p></aside>
+<p class="verify" role="note"><span class="vlabel">Verification status:</span> known properties of the Berry model, independently reproduced, code open. The numbers that the first version called predictions for experiment are the values of the null model itself. Agreement with experiment on these numbers cannot count in favour of any additional hypothesis: that would take different quantitative predictions, and we do not have them yet.</p>
+<h2 id="en-3"><span class="hn">3.</span>Non-collapse margin M<a aria-label="Link to section" class="anchor" href="#en-3">#</a></h2>
+<p>This field has a pedigree. Perelman's no-local-collapsing theorem [<a class="cite-ref" href="#en-ref-10">10</a>] rules out local collapse in Ricci flow: on a finite time interval, a ball of radius r on which the curvature is at most r<sup>−2</sup> has volume at least κr<sup>n</sup>, where the constant κ &gt; 0 depends only on the initial metric and the interval. We borrow a discipline from it, not a statement: <strong>if the instrument reads zero, check the instrument first.</strong> Zero can also be a property of the object, but that has to be shown by a control run with a large margin, not assumed.</p>
+<p>In the note "A numerical non-collapse condition" we introduced the margin M = log₁₀(w<sub>min</sub>/ε): how many orders of magnitude the instrument threshold ε lies below the weakest relevant weight w<sub>min</sub>. A check on a live language model (Pythia-160M [<a class="cite-ref" href="#en-ref-15">15</a>], attention graphs, three probe texts) taught a lesson more precise than our first formulation:</p>
+<ul>
+<li>when the model is naively cast to half precision (fp16: <code>model.half()</code>, eager attention), layers from layer 5 or 6 onward (counting from zero, depending on the text) look "dead": their graphs are empty. In fp32 and fp64 the eight-strongest-neighbour graphs of all layers are connected. <strong>"Dead layers" are an artefact of the number format in this attention implementation, not of training;</strong></li>
+<li>the mechanism is not the loss of weak weights, as we wrote in the first version, but overflow. The unscaled product q·kᵀ exceeds the fp16 maximum of 65,504 (in fp32, on the prose text, it reaches 79,305 as early as layer 4). The result is infinity, softmax returns NaN, and NaN contaminates every subsequent layer. The weights of such layers are undefined. If NaN is replaced by zero, or edges are kept by the test w ≥ ε (every comparison with NaN is false), the graph comes out empty; which of the two paths operated in the original runs we did not reconstruct;</li>
+<li>the fp16 format itself does not zero out tails below 6·10<sup>−5</sup>: that is only the smallest normal number [<a class="cite-ref" href="#en-ref-16">16</a>]. Below it, down to 6·10<sup>−8</sup>, come subnormal numbers, and under standard rounding only values no larger than 3·10<sup>−8</sup> become exact zero;</li>
+<li>the tails, however, are real. In layers 8–11, between <strong>27 and 72%</strong> of the edges that belong to their nodes' eight strongest weigh less than 6·10<sup>−5</sup> already in fp64. Deep-layer attention is extremely concentrated, and that is a property of the model, not of the format.</li>
+</ul>
+<p>The bookkeeping here is double-entry. The "dead layer" turned out to be not a dark sector but a broken instrument. The real dark sector, the attention tails, becomes visible only once the instrument is fixed.</p>
+<aside class="guard" role="note"><p><span class="glabel">Guard:</span> M is a diagnostic margin, not a certificate: it does not see NaN, and it changes by tens of orders of magnitude with the choice of w<sub>min</sub> and ε. The values of M from the first version are withdrawn until an exact definition is published. The transfer from geometry to attention graphs is a methodological analogy, not a theorem; the fractions depend on the corpus and on the attention implementation.</p></aside>
+<p class="verify" role="note"><span class="vlabel">Verification status:</span> independently reproduced on CPU (PyTorch 2.15, Transformers 5.23, Pythia-160M revision 50f5173, eager attention), code and tables open. Not tested on GPU; with the SDPA attention implementation the same fp16 stays finite in all layers.</p>
+<h2 id="en-4"><span class="hn">4.</span>Test date<a aria-label="Link to section" class="anchor" href="#en-4">#</a></h2>
+<p>An honest entry has a review date, written down before the result. Three examples of different calibre:</p>
+<ul>
+<li><strong>Our statistics of zeros.</strong> In the first version we promised to revise the entry publicly if the numbers did not hold. We are revising it (section 2): some numbers are corrected, and the status "prediction" is replaced by "reproduction of known null-model properties".</li>
+<li><strong>Fusion energy.</strong> Ignition at NIF is a gain relative to the laser energy on target; the facility itself consumes about a hundred times that energy [<a class="cite-ref" href="#en-ref-11">11</a>]. Our forecast: by <strong>31 December 2032</strong> no facility will demonstrate an independently confirmed net positive wall-plug electricity balance. If one does, the entry is withdrawn. This is an estimate of timing, not a verdict on the field.</li>
+<li><strong>A long-lived heavy neutrino.</strong> A long-lived heavy neutrino can temporarily become the dominant component of the early Universe; such a stage leaves characteristic breaks in the spectrum of the gravitational-wave background [<a class="cite-ref" href="#en-ref-12">12</a>]. The test window opens no earlier than the launch of LISA, planned for <strong>2035</strong> [<a class="cite-ref" href="#en-ref-13">13</a>]. The Einstein Telescope is expected later: the site is to be chosen in 2027, with about ten years allotted to preparation and construction [<a class="cite-ref" href="#en-ref-14">14</a>]. A caveat attached to the entry: many models produce such a break, so the fingerprint is not unique.</li>
+</ul>
+<p>An entity without a test date is a name. An entry in the ledger has a review date, and, as the first item shows, it sometimes arrives sooner than one would like.</p>
+<h2 id="en-5">What this changes<a aria-label="Link to section" class="anchor" href="#en-5">#</a></h2>
+<p>Cosmology asks: "What is dark matter?" For cosmology that is the right question. For everyday computational work we propose a second one: <strong>"What did you throw away, and how much does it weigh?"</strong> It can be answered with a number, today, on existing hardware.</p>
+<p>A workshop rule, free for everyone: <strong>before declaring anything dead, check that your instrument's numbers are finite, and show its margin.</strong> Before cleaning data, itemize what you discard. It already has a weight.</p>
+<h2 id="en-6">What was corrected in revision 2<a aria-label="Link to section" class="anchor" href="#en-6">#</a></h2>
+<div class="tbl wide"><table class="cols3 cards">
+<thead>
+<tr>
+<th>In the first version</th>
+<th>Now</th>
+<th>Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="In the first version">g(r) ~ r<sup>1.81</sup></td>
+<td data-label="Now">g<sub>same</sub>(r) ≈ 1.80·(r/λ)<sup>3</sup></td>
+<td data-label="Basis">The formulas of [<a class="cite-ref" href="#en-ref-6">6</a>] imply a cubic asymptote. A slope near 1.8 appears on a 0.025λ grid without root verification in a narrow fitting window; the estimate is sensitive to grid and window</td>
+</tr>
+<tr>
+<td data-label="In the first version">g(0.1λ) = 0.008</td>
+<td data-label="Now">0.0019</td>
+<td data-label="Basis">Numerical quadrature of the exact formulas of [<a class="cite-ref" href="#en-ref-6">6</a>]. In the bin 0.075–0.125λ a 0.05λ grid without root verification gives 0.0073 ± 0.0009, a 0.0125λ grid with verified roots gives 0.0016 ± 0.0004, against a theoretical bin average of 0.0022</td>
+</tr>
+<tr>
+<td data-label="In the first version">79.2% opposite-sign nearest pairs</td>
+<td data-label="Now">78.7% (standard error 0.1 pp)</td>
+<td data-label="Basis">463,113 zeros in an independent simulation, about 3.2 times the original 145,184</td>
+</tr>
+<tr>
+<td data-label="In the first version">Series 0.543 → 0.157 → 0.103 → 0.054</td>
+<td data-label="Now">The 1/m law at fixed r/λ</td>
+<td data-label="Basis">The metric of the series was not defined; none of the 32 metrics tried reproduced the full series</td>
+</tr>
+<tr>
+<td data-label="In the first version">"fp16 zeroes out tails below 6·10<sup>−5</sup>"</td>
+<td data-label="Now">Overflow of q·kᵀ → NaN</td>
+<td data-label="Basis">Direct run locating the first Inf or NaN inside attention; check of fp16 softmax rounding</td>
+</tr>
+<tr>
+<td data-label="In the first version">M(fp32) = 7.8–9.7, M(fp16) = 0.0–0.1</td>
+<td data-label="Now">Withdrawn</td>
+<td data-label="Basis">The first is not reproduced under any of the 20 definitions of w<sub>min</sub> and ε tried; the second is obtained only tautologically (w<sub>min</sub> is the smallest non-zero weight, ε = 2<sup>−24</sup>), and then in every layer</td>
+</tr>
+<tr>
+<td data-label="In the first version">43–72% of edges below the threshold</td>
+<td data-label="Now">27–72%</td>
+<td data-label="Basis">43–72% is one text (prose), layers 8–11; across three texts it is 27–72%. This is the share of weights below the threshold, not of zeroed weights: fp16 zeroes 8–62%</td>
+</tr>
+<tr>
+<td data-label="In the first version">"Predictions handed over for testing"</td>
+<td data-label="Now">Agreement on these numbers does not discriminate between hypotheses</td>
+<td data-label="Basis">They are the values of the null model itself, not a separate test of an additional hypothesis</td>
+</tr>
+<tr>
+<td data-label="In the first version">Fusion: the label "dead-end branch"</td>
+<td data-label="Now">A timing forecast with the same date</td>
+<td data-label="Basis">No wall-plug balance by 2032 would not refute the field</td>
+</tr>
+<tr>
+<td data-label="In the first version">Neutrino: test date 2035</td>
+<td data-label="Now">No earlier than 2035</td>
+<td data-label="Basis">2035 is the LISA launch year; data come later</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="en-7">What is open and what is closed<a aria-label="Link to section" class="anchor" href="#en-7">#</a></h2>
+<p>Open: the code, tables and environment description for the independent reproductions of sections 2 and 3, in the <a class="js-keep-lang" href="repro/">reproduction materials</a>. An archived copy of this revision together with the materials is kept on Zenodo: <a class="bare" href="https://doi.org/10.5281/zenodo.24372606" rel="noopener" target="_blank">https://doi<wbr/>.org/<wbr/>10<wbr/>.5281/<wbr/>zenodo<wbr/>.24372606</a>. Closed: the PeGamBo computational core and the graph models of section 1. Numbers that depend on closed parts are marked as claims, not results. The reproductions for revision 2 were carried out with the help of AI assistants; responsibility for the text and for any errors rests with the author.</p>
+<h2 id="en-8">About PeGamBo<a aria-label="Link to section" class="anchor" href="#en-8">#</a></h2>
+<p>PeGamBo is a pre-MVP project: we are building a classical optimization engine and testing it under protocols fixed in advance; the current tests are on the <a class="js-keep-lang" href="../../">main page</a>. This note is not about the engine. It is about our measurement discipline: every number has a guard, a status and a review date, and corrections and negative results are published on a par with positive ones. Comments and refutations: <a class="js-mail" data-d="moc.obmagep" data-u="olleh" href="#contact"><span class="js-mail-text">hello [at] pegambo.com</span></a>.</p>
+<h2 id="en-9">References<a aria-label="Link to section" class="anchor" href="#en-9">#</a></h2>
+<ol class="refs">
+<li id="en-ref-1">Planck Collaboration. Planck 2018 results. VI. Cosmological parameters. Astron. Astrophys. 641, A6 (2020). <a class="bare" href="https://arxiv.org/abs/1807.06209" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>1807<wbr/>.06209</a></li>
+<li id="en-ref-2">Granovetter M. S. The strength of weak ties. Am. J. Sociol. 78, 1360–1380 (1973). <a class="bare" href="https://www.jstor.org/stable/2776392" rel="noopener" target="_blank">https://www<wbr/>.jstor<wbr/>.org/<wbr/>stable/<wbr/>2776392</a></li>
+<li id="en-ref-3">Serrano M. Á., Boguñá M., Vespignani A. Extracting the multiscale backbone of complex weighted networks. PNAS 106, 6483–6488 (2009). <a class="bare" href="https://arxiv.org/abs/0904.2389" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>0904<wbr/>.2389</a></li>
+<li id="en-ref-4">Hooker S., Courville A., Clark G., Dauphin Y., Frome A. What do compressed deep neural networks forget? arXiv:1911.05248 (2019). <a class="bare" href="https://arxiv.org/abs/1911.05248" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>1911<wbr/>.05248</a></li>
+<li id="en-ref-5">Nye J. F., Berry M. V. Dislocations in wave trains. Proc. R. Soc. Lond. A 336, 165–190 (1974). <a class="bare" href="https://doi.org/10.1098/rspa.1974.0012" rel="noopener" target="_blank">https://doi<wbr/>.org/<wbr/>10<wbr/>.1098/<wbr/>rspa<wbr/>.1974<wbr/>.0012</a></li>
+<li id="en-ref-6">Berry M. V., Dennis M. R. Phase singularities in isotropic random waves. Proc. R. Soc. Lond. A 456, 2059–2079 (2000). <a class="bare" href="https://doi.org/10.1098/rspa.2000.0602" rel="noopener" target="_blank">https://doi<wbr/>.org/<wbr/>10<wbr/>.1098/<wbr/>rspa<wbr/>.2000<wbr/>.0602</a></li>
+<li id="en-ref-7">Shvartsman N., Freund I. Vortices in random wave fields: nearest neighbor anticorrelations. Phys. Rev. Lett. 72, 1008–1011 (1994). <a class="bare" href="https://doi.org/10.1103/PhysRevLett.72.1008" rel="noopener" target="_blank">https://doi<wbr/>.org/<wbr/>10<wbr/>.1103/<wbr/>PhysRevLett<wbr/>.72<wbr/>.1008</a></li>
+<li id="en-ref-8">Saichev A. I., Berggren K.-F., Sadreev A. F. Distribution of nearest distances between nodal points for the Berry function in two dimensions. Phys. Rev. E 64, 036222 (2001). <a class="bare" href="https://arxiv.org/abs/nlin/0012019" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>nlin/<wbr/>0012019</a></li>
+<li id="en-ref-9">Bucher T. et al. Superluminal correlations in ensembles of optical phase singularities. Nature 651, 920–926 (2026). <a class="bare" href="https://doi.org/10.1038/s41586-026-10209-z" rel="noopener" target="_blank">https://doi<wbr/>.org/<wbr/>10<wbr/>.1038/<wbr/>s41586<wbr/>-026<wbr/>-10209<wbr/>-z</a></li>
+<li id="en-ref-10">Perelman G. The entropy formula for the Ricci flow and its geometric applications. arXiv:math/0211159 (2002). <a class="bare" href="https://arxiv.org/abs/math/0211159" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>math/<wbr/>0211159</a></li>
+<li id="en-ref-11">Lawrence Livermore National Laboratory. LLNL’s breakthrough ignition experiment highlighted in Physical Review Letters (5 February 2024). <a class="bare" href="https://lmf.llnl.gov/news/llnls-breakthrough-ignition-experiment-highlighted-in-physical-review-letters" rel="noopener" target="_blank">https://lmf<wbr/>.llnl<wbr/>.gov/<wbr/>news/<wbr/>llnls<wbr/>-breakthrough<wbr/>-ignition<wbr/>-experiment<wbr/>-highlighted<wbr/>-in<wbr/>-physical<wbr/>-review<wbr/>-letters</a></li>
+<li id="en-ref-12">Datta S., Ghoshal A., Spalding A., White G. Gravitational wave spectral shapes as a probe of long lived right-handed neutrinos, leptogenesis and dark matter: global versus local B-L cosmic strings. arXiv:2511.01779 (2025). <a class="bare" href="https://arxiv.org/abs/2511.01779" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>2511<wbr/>.01779</a></li>
+<li id="en-ref-13">European Space Agency. Capturing the ripples of spacetime: LISA gets go-ahead (25 January 2024). <a class="bare" href="https://www.esa.int/articles/about-us/directorates/science/lisa/capturing-the-ripples-of-spacetime-lisa-gets-go-ahead" rel="noopener" target="_blank">https://www<wbr/>.esa<wbr/>.int/<wbr/>articles/<wbr/>about<wbr/>-us/<wbr/>directorates/<wbr/>science/<wbr/>lisa/<wbr/>capturing<wbr/>-the<wbr/>-ripples<wbr/>-of<wbr/>-spacetime<wbr/>-lisa<wbr/>-gets<wbr/>-go<wbr/>-ahead</a></li>
+<li id="en-ref-14">Einstein Telescope EMR. Frequently asked questions (2026). <a class="bare" href="https://www.einsteintelescope-emr.eu/en/faq/" rel="noopener" target="_blank">https://www<wbr/>.einsteintelescope<wbr/>-emr<wbr/>.eu/<wbr/>en/<wbr/>faq/</a></li>
+<li id="en-ref-15">Biderman S. et al. Pythia: a suite for analyzing large language models across training and scaling. Proc. Mach. Learn. Res. 202, 2397–2430 (2023). <a class="bare" href="https://arxiv.org/abs/2304.01373" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>2304<wbr/>.01373</a></li>
+<li id="en-ref-16">IEEE. IEEE Standard for Floating-Point Arithmetic, IEEE Std 754-2019 (2019). <a class="bare" href="https://doi.org/10.1109/IEEESTD.2019.8766229" rel="noopener" target="_blank">https://doi<wbr/>.org/<wbr/>10<wbr/>.1109/<wbr/>IEEESTD<wbr/>.2019<wbr/>.8766229</a></li>
+</ol>
+<hr/>
+<p class="colophon"><em>This note publishes measurement results of the PeGamBo workshop. Guards, verification statuses and review dates accompany every number: that is a condition of publication, not decoration.</em></p>
+    </div>
+  </article>
+  <p class="nojs-sep" aria-hidden="true">Русская версия / Russian version</p>
+  <article class="paper" data-lang="ru" lang="ru" aria-labelledby="ru-title">
+    <p class="paper-kicker"><i aria-hidden="true"></i><span class="ks">Научная заметка ·</span><span class="ks">ред. 2 ·</span><span class="ks"><time datetime="2026-11-19">19 ноября 2026</time></span></p>
+    <div class="prose">
+<h1 id="ru-title">Тёмный сектор как бухгалтерия: четыре измеримых свойства вместо имени</h1>
+<p class="byline"><span class="seg"><strong>Олег Бортников</strong></span> <span class="dot">·</span> <span class="seg">независимый исследователь</span> <span class="dot">·</span> <span class="seg">PeGamBo, мастерская «Линеешная»</span> <span class="dot">·</span> <span class="seg">pegambo.com</span><br/><span class="seg">Визитная статья</span> <span class="dot">·</span> <span class="seg">редакция 2 от 19 ноября 2026</span> <span class="dot">·</span> <span class="seg">первая редакция — 28 октября 2026</span></p>
+<p class="doiline"><span class="k">DOI</span> <a href="https://doi.org/10.5281/zenodo.24372606" rel="noopener" target="_blank">10.5281/zenodo.24372606</a></p>
+<hr/>
+<p>Космология измерила вклад тёмной материи и тёмной энергии с процентной точностью [<a class="cite-ref" href="#ru-ref-1">1</a>]. Что они такое — вопрос открытый, и эта заметка не о нём. Она о тёмном секторе попроще, который каждый исследователь создаёт сам: отрезанные рёбра графа, хвосты распределений, слагаемые, которые «можно не учитывать», числа ниже порога прибора. <strong>Наш тезис: такой тёмный сектор — не сущность, а бухгалтерия.</strong> У каждой записи в ней четыре поля: вес, заряд, запас прибора и дата проверки.</p>
+<p>Мы не заявляем, что это то же самое, что космологические тёмная материя и энергия. Мы заявляем проверяемое: <strong>то, что выброшено, измеримо прямо сейчас, без нового детектора.</strong> Ниже — по одному рабочему примеру на каждое поле. У каждого числа указан статус: что известно из литературы, что мы воспроизвели и открыли код, а что остаётся внутренним измерением, которое читатель пока проверить не может. Во второй редакции часть чисел первой исправлена; список исправлений — в конце.</p>
+<h2 id="ru-1"><span class="hn">1.</span>Вес<a aria-label="Ссылка на раздел" class="anchor" href="#ru-1">#</a></h2>
+<p>Отрезанное не уходит в ноль. В науке о сетях это известно давно: слабые связи держат связность целого [<a class="cite-ref" href="#ru-ref-2">2</a>], а отсечка по общему порогу веса ломает многомасштабную структуру сети [<a class="cite-ref" href="#ru-ref-3">3</a>]. Сжатые нейросети при той же средней точности теряют именно редкие примеры [<a class="cite-ref" href="#ru-ref-4">4</a>]. Мы задаём тот же вопрос числом — до разреза.</p>
+<p>В наших графовых моделях рёбра, отрезанные при «упрощении», оказались невидимыми для диффузии (двухщелевой тест: вклад в распространение — 0.0000), но при этом держали <strong>99.4% кривизно-заряда</strong> и <strong>99.3% голономии</strong>. Остаток слоя за разрезом, κ∞ = <strong>0.246</strong>, — не ноль.</p>
+<p>У любого, кто чистит данные, есть вес, который можно взвесить до чистки. На практике это делают редко.</p>
+<aside class="guard" role="note"><p><span class="glabel">Страж:</span> числа относятся к нашим моделям, а не к Вселенной; перенос — по правилам проверки, не по аналогии.</p></aside>
+<p class="verify" role="note"><span class="vlabel">Статус проверки:</span> внутреннее измерение. Модели и определения «кривизно-заряда» и «голономии» пока не опубликованы, поэтому со стороны это заявление, а не проверяемый результат.</p>
+<h2 id="ru-2"><span class="hn">2.</span>Заряд<a aria-label="Ссылка на раздел" class="anchor" href="#ru-2">#</a></h2>
+<p>Тёмное умеет быть заряженным. В простом нуле комплексного волнового поля интенсивности нет, а фаза не определена; при обходе по малому контуру вокруг нуля она набегает на ±2π. У нуля есть <strong>квантованный топологический заряд ±1</strong> [<a class="cite-ref" href="#ru-ref-5">5</a>]. Плотность таких нулей в случайной волне и их парные корреляции вывели Берри и Деннис [<a class="cite-ref" href="#ru-ref-6">6</a>], антикорреляция знаков ближайших соседей известна с 1994 года [<a class="cite-ref" href="#ru-ref-7">7</a>], расстояния между ближайшими нулями считали и численно [<a class="cite-ref" href="#ru-ref-8">8</a>]; динамику ансамблей нулей измеряли экспериментально [<a class="cite-ref" href="#ru-ref-9">9</a>]. Это не наши законы. Мы воспроизвели их как калибровку собственного инструмента — на ансамбле из <strong>463 113</strong> нулей в 64 независимых реализациях двумерной изотропной монохроматической гауссовой волны:</p>
+<ul>
+<li>близкие одноимённые пары статистически подавлены: парная корреляция нулей одного знака g<sub>same</sub>(r) ≈ 1.80·(r/λ)<sup>3</sup> при r → 0. При r = 0.1λ теория даёт <strong>0.0019</strong>; наш счёт в интервале 0.09–0.11λ — 0.0024 ± 0.0008 (одна стандартная ошибка);</li>
+<li>у <strong>78.7%</strong> нулей ближайший сосед — противоположного знака (стандартная ошибка 0.1 процентного пункта); самое частое расстояние до ближайшего соседа, без отбора по знаку, — около 0.46λ;</li>
+<li>если объединить множества нулей m независимых реализаций, отклонение парной корреляции от пуассоновского уровня при фиксированном r/λ уменьшается ровно в m раз: g<sub>m</sub>(r) − 1 = (g<sub>1</sub>(r) − 1)/m. Картина уходит к пуассоновской.</li>
+</ul>
+<p>Тёмное не пустое: оно заряжено и упорядочено. Для бухгалтерии это значит простое: ноль амплитуды — не ноль информации.</p>
+<aside class="guard" role="note"><p><span class="glabel">Страж:</span> это идеализированная нулевая модель (модель Берри), не данные конкретной установки. «Подавлены» описывает пространственную статистику нулей, а не силы между ними.</p></aside>
+<p class="verify" role="note"><span class="vlabel">Статус проверки:</span> известные свойства модели Берри, воспроизведены независимо, код открыт. Числа, которые мы в первой редакции назвали предсказаниями для эксперимента, — это значения самой нулевой модели. Согласие с экспериментом по ним не может говорить в пользу какой-либо дополнительной гипотезы: для этого нужны отличающиеся количественные предсказания, и их у нас пока нет.</p>
+<h2 id="ru-3"><span class="hn">3.</span>Запас неколлапса M<a aria-label="Ссылка на раздел" class="anchor" href="#ru-3">#</a></h2>
+<p>У этого поля есть происхождение. Теорема Перельмана о неколлапсе [<a class="cite-ref" href="#ru-ref-10">10</a>] исключает в потоке Риччи локальный коллапс: на конечном интервале времени шар радиуса r, на котором кривизна не превышает r<sup>−2</sup>, имеет объём не меньше κr<sup>n</sup>, где постоянная κ &gt; 0 зависит только от начальной метрики и интервала. Мы берём у неё не утверждение, а дисциплину: <strong>если прибор показывает ноль, сначала проверь прибор.</strong> Ноль бывает и свойством объекта, но это показывают контрольным прогоном с большим запасом, а не предполагают.</p>
+<p>В заметке «Условие численного неколлапса» мы ввели запас M = log₁₀(w<sub>min</sub>/ε): на сколько порядков порог прибора ε лежит ниже самого слабого значимого веса w<sub>min</sub>. Проверка на живой языковой модели (Pythia-160M [<a class="cite-ref" href="#ru-ref-15">15</a>], графы внимания, три зондовых текста) дала урок точнее нашей первой формулировки:</p>
+<ul>
+<li>при наивном переводе модели в половинную точность (fp16: <code>model.half()</code>, внимание в режиме eager) слои начиная с 5-го или 6-го (счёт с нуля, зависит от текста) выглядят «мёртвыми»: их графы пусты. В fp32 и fp64 графы восьми сильнейших соседей во всех слоях связны. <strong>«Мёртвые слои» — артефакт числового формата в этой реализации внимания, а не обучения;</strong></li>
+<li>механизм — не потеря слабых весов, как мы писали в первой редакции, а переполнение. Произведение q·kᵀ до масштабирования превышает максимум fp16, равный 65 504 (в fp32 на прозе оно доходит до 79 305 уже в слое 4). Получается бесконечность, softmax возвращает NaN, и NaN заражает все следующие слои. Веса таких слоёв не определены. Если заменить NaN нулём или отбирать рёбра условием w ≥ ε (любое сравнение с NaN ложно), граф выходит пустым; какой из двух путей сработал в исходных прогонах, мы не восстанавливали;</li>
+<li>сам формат fp16 хвосты ниже 6·10<sup>−5</sup> не обнуляет: это лишь наименьшее нормальное число [<a class="cite-ref" href="#ru-ref-16">16</a>]. Ниже, до 6·10<sup>−8</sup>, идут субнормальные числа, и при стандартном округлении в точный ноль уходит только то, что не больше 3·10<sup>−8</sup>;</li>
+<li>при этом хвосты настоящие. В слоях 8–11 от <strong>27 до 72%</strong> рёбер, входящих в восьмёрки сильнейших для своих узлов, весят меньше 6·10<sup>−5</sup> уже в fp64. Внимание глубоких слоёв предельно сконцентрировано, и это свойство модели, а не формата.</li>
+</ul>
+<p>Бухгалтерия здесь двойная. «Мёртвый слой» оказался не тёмным сектором, а сломанным прибором. Настоящий тёмный сектор — хвосты внимания — виден только после того, как прибор починен.</p>
+<aside class="guard" role="note"><p><span class="glabel">Страж:</span> M — диагностический запас, а не сертификат: он не видит NaN и меняется на десятки порядков от выбора w<sub>min</sub> и ε. Значения M из первой редакции сняты до публикации точного определения. Перенос с геометрии на графы внимания — методологическая аналогия, не теорема; доли зависят от корпуса и от реализации внимания.</p></aside>
+<p class="verify" role="note"><span class="vlabel">Статус проверки:</span> воспроизведено независимо на CPU (PyTorch 2.15, Transformers 5.23, Pythia-160M ревизии 50f5173, внимание в режиме eager), код и таблицы открыты. На GPU не проверялось; в реализации внимания SDPA тот же fp16 остаётся конечным во всех слоях.</p>
+<h2 id="ru-4"><span class="hn">4.</span>Дата проверки<a aria-label="Ссылка на раздел" class="anchor" href="#ru-4">#</a></h2>
+<p>У честной записи есть срок пересмотра, и он записан до результата. Три примера разного калибра:</p>
+<ul>
+<li><strong>Наша статистика нулей.</strong> В первой редакции мы обещали пересмотреть запись публично, если числа не сойдутся. Пересматриваем (раздел 2): часть чисел исправлена, статус «предсказание» заменён на «воспроизведение известных свойств нулевой модели».</li>
+<li><strong>Термоядерная энергетика.</strong> Зажигание на NIF — выигрыш относительно энергии лазера на мишени; сама установка потребляет примерно в сто раз больше этой энергии [<a class="cite-ref" href="#ru-ref-11">11</a>]. Наш прогноз: до <strong>31.12.2032</strong> ни одна установка не покажет независимо подтверждённый положительный электрический баланс от розетки. Покажет — запись снимается. Это оценка сроков, а не приговор направлению.</li>
+<li><strong>Долгоживущее тяжёлое нейтрино.</strong> Долгоживущее тяжёлое нейтрино может на время стать доминирующей компонентой ранней Вселенной; такая стадия оставляет характерные изломы в спектре гравитационно-волнового фона [<a class="cite-ref" href="#ru-ref-12">12</a>]. Окно проверки открывается не раньше запуска LISA, намеченного на <strong>2035</strong> год [<a class="cite-ref" href="#ru-ref-13">13</a>]. Einstein Telescope ожидается позже: площадку выбирают в 2027 году, на подготовку и строительство отведено около десяти лет [<a class="cite-ref" href="#ru-ref-14">14</a>]. Предупреждение при записи: такой излом дают многие модели, отпечаток не уникален.</li>
+</ul>
+<p>Сущность, у которой нет даты проверки, — это имя. У записи в бухгалтерии есть срок пересмотра, и, как видно по первому пункту, он иногда наступает раньше, чем хотелось бы.</p>
+<h2 id="ru-5">Что это меняет<a aria-label="Ссылка на раздел" class="anchor" href="#ru-5">#</a></h2>
+<p>Космология спрашивает: «Что такое тёмная материя?» — и для космологии это правильный вопрос. Для повседневной вычислительной работы мы предлагаем второй: <strong>«Что ты выбросил — и сколько это весит?»</strong> На него можно ответить числом, сегодня, на существующем железе.</p>
+<p>Правило мастерской, бесплатное для всех: <strong>прежде чем объявить что-либо мёртвым, проверь, конечны ли числа твоего прибора, и предъяви его запас.</strong> Прежде чем чистить данные — пронумеруй мусор. У него уже есть вес.</p>
+<h2 id="ru-6">Что исправлено во второй редакции<a aria-label="Ссылка на раздел" class="anchor" href="#ru-6">#</a></h2>
+<div class="tbl wide"><table class="cols3 cards">
+<thead>
+<tr>
+<th>Было в первой редакции</th>
+<th>Стало</th>
+<th>Основание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Было в первой редакции">g(r) ~ r<sup>1.81</sup></td>
+<td data-label="Стало">g<sub>same</sub>(r) ≈ 1.80·(r/λ)<sup>3</sup></td>
+<td data-label="Основание">Из формул [<a class="cite-ref" href="#ru-ref-6">6</a>] следует кубическая асимптотика. Наклон около 1.8 получается при шаге сетки 0.025λ без проверки корней в узком окне подгонки; оценка чувствительна к сетке и окну</td>
+</tr>
+<tr>
+<td data-label="Было в первой редакции">g(0.1λ) = 0.008</td>
+<td data-label="Стало">0.0019</td>
+<td data-label="Основание">Численная квадратура точных формул [<a class="cite-ref" href="#ru-ref-6">6</a>]. В интервале 0.075–0.125λ сетка с шагом 0.05λ без проверки корней даёт 0.0073 ± 0.0009, сетка 0.0125λ с проверкой — 0.0016 ± 0.0004 при теоретическом среднем 0.0022</td>
+</tr>
+<tr>
+<td data-label="Было в первой редакции">79.2% разноимённых ближайших пар</td>
+<td data-label="Стало">78.7% (стандартная ошибка 0.1 п. п.)</td>
+<td data-label="Основание">463 113 нулей в независимой симуляции, примерно в 3.2 раза больше исходных 145 184</td>
+</tr>
+<tr>
+<td data-label="Было в первой редакции">Ряд 0.543 → 0.157 → 0.103 → 0.054</td>
+<td data-label="Стало">Закон 1/m при фиксированном r/λ</td>
+<td data-label="Основание">Метрика ряда не была определена; ни одна из 32 опробованных метрик не воспроизвела ряд целиком</td>
+</tr>
+<tr>
+<td data-label="Было в первой редакции">«fp16 обнуляет хвосты ниже 6·10<sup>−5</sup>»</td>
+<td data-label="Стало">Переполнение q·kᵀ → NaN</td>
+<td data-label="Основание">Прямой прогон с поиском первого Inf или NaN внутри внимания; проверка округления softmax в fp16</td>
+</tr>
+<tr>
+<td data-label="Было в первой редакции">M(fp32) = 7.8–9.7, M(fp16) = 0.0–0.1</td>
+<td data-label="Стало">Сняты</td>
+<td data-label="Основание">Первое не воспроизводится ни при одном из 20 опробованных определений w<sub>min</sub> и ε; второе получается только тавтологически (w<sub>min</sub> — наименьший ненулевой вес, ε = 2<sup>−24</sup>), причём во всех слоях</td>
+</tr>
+<tr>
+<td data-label="Было в первой редакции">43–72% рёбер ниже порога</td>
+<td data-label="Стало">27–72%</td>
+<td data-label="Основание">43–72% — один текст (проза), слои 8–11; по трём текстам 27–72%. Это доля весов ниже порога, а не обнулённых: в fp16 обнуляется 8–62%</td>
+</tr>
+<tr>
+<td data-label="Было в первой редакции">«Предсказания переданы на проверку»</td>
+<td data-label="Стало">Согласие с этими числами гипотез не различает</td>
+<td data-label="Основание">Это значения самой нулевой модели, а не отдельный тест дополнительной гипотезы</td>
+</tr>
+<tr>
+<td data-label="Было в первой редакции">Термояд: ярлык «тупиковая ветвь»</td>
+<td data-label="Стало">Прогноз сроков с той же датой</td>
+<td data-label="Основание">Отсутствие баланса от розетки к 2032 году не опровергает направление</td>
+</tr>
+<tr>
+<td data-label="Было в первой редакции">Нейтрино: дата проверки 2035</td>
+<td data-label="Стало">Не раньше 2035</td>
+<td data-label="Основание">2035 — год запуска LISA, данные появятся позже</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="ru-7">Что открыто и что закрыто<a aria-label="Ссылка на раздел" class="anchor" href="#ru-7">#</a></h2>
+<p>Открыто: код, таблицы и описание окружения для независимых воспроизведений разделов 2 и 3 — в <a class="js-keep-lang" href="repro/">материалах для воспроизведения</a>. Архивная копия этой редакции вместе с материалами хранится на Zenodo: <a class="bare" href="https://doi.org/10.5281/zenodo.24372606" rel="noopener" target="_blank">https://doi<wbr/>.org/<wbr/>10<wbr/>.5281/<wbr/>zenodo<wbr/>.24372606</a>. Закрыто: вычислительное ядро PeGamBo и графовые модели раздела 1. Числа, которые зависят от закрытого, помечены как заявления, а не как результаты. Воспроизведения для второй редакции выполнены с помощью ИИ-ассистентов; ответственность за текст и за ошибки несёт автор.</p>
+<h2 id="ru-8">О PeGamBo<a aria-label="Ссылка на раздел" class="anchor" href="#ru-8">#</a></h2>
+<p>PeGamBo — проект на стадии pre-MVP: мы разрабатываем классический движок оптимизации и проверяем его по заранее зафиксированным протоколам; текущие проверки — на <a class="js-keep-lang" href="../../">главной странице</a>. Эта заметка не о движке. Она о дисциплине, с которой мы меряем: у каждого числа есть страж, статус и срок пересмотра, а исправления и отрицательные результаты публикуются наравне с положительными. Замечания и опровержения — <a class="js-mail" data-d="moc.obmagep" data-u="olleh" href="#contact"><span class="js-mail-text">hello [at] pegambo.com</span></a>.</p>
+<h2 id="ru-9">Литература<a aria-label="Ссылка на раздел" class="anchor" href="#ru-9">#</a></h2>
+<ol class="refs">
+<li id="ru-ref-1">Planck Collaboration. Planck 2018 results. VI. Cosmological parameters. Astron. Astrophys. 641, A6 (2020). <a class="bare" href="https://arxiv.org/abs/1807.06209" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>1807<wbr/>.06209</a></li>
+<li id="ru-ref-2">Granovetter M. S. The strength of weak ties. Am. J. Sociol. 78, 1360–1380 (1973). <a class="bare" href="https://www.jstor.org/stable/2776392" rel="noopener" target="_blank">https://www<wbr/>.jstor<wbr/>.org/<wbr/>stable/<wbr/>2776392</a></li>
+<li id="ru-ref-3">Serrano M. Á., Boguñá M., Vespignani A. Extracting the multiscale backbone of complex weighted networks. PNAS 106, 6483–6488 (2009). <a class="bare" href="https://arxiv.org/abs/0904.2389" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>0904<wbr/>.2389</a></li>
+<li id="ru-ref-4">Hooker S., Courville A., Clark G., Dauphin Y., Frome A. What do compressed deep neural networks forget? arXiv:1911.05248 (2019). <a class="bare" href="https://arxiv.org/abs/1911.05248" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>1911<wbr/>.05248</a></li>
+<li id="ru-ref-5">Nye J. F., Berry M. V. Dislocations in wave trains. Proc. R. Soc. Lond. A 336, 165–190 (1974). <a class="bare" href="https://doi.org/10.1098/rspa.1974.0012" rel="noopener" target="_blank">https://doi<wbr/>.org/<wbr/>10<wbr/>.1098/<wbr/>rspa<wbr/>.1974<wbr/>.0012</a></li>
+<li id="ru-ref-6">Berry M. V., Dennis M. R. Phase singularities in isotropic random waves. Proc. R. Soc. Lond. A 456, 2059–2079 (2000). <a class="bare" href="https://doi.org/10.1098/rspa.2000.0602" rel="noopener" target="_blank">https://doi<wbr/>.org/<wbr/>10<wbr/>.1098/<wbr/>rspa<wbr/>.2000<wbr/>.0602</a></li>
+<li id="ru-ref-7">Shvartsman N., Freund I. Vortices in random wave fields: nearest neighbor anticorrelations. Phys. Rev. Lett. 72, 1008–1011 (1994). <a class="bare" href="https://doi.org/10.1103/PhysRevLett.72.1008" rel="noopener" target="_blank">https://doi<wbr/>.org/<wbr/>10<wbr/>.1103/<wbr/>PhysRevLett<wbr/>.72<wbr/>.1008</a></li>
+<li id="ru-ref-8">Saichev A. I., Berggren K.-F., Sadreev A. F. Distribution of nearest distances between nodal points for the Berry function in two dimensions. Phys. Rev. E 64, 036222 (2001). <a class="bare" href="https://arxiv.org/abs/nlin/0012019" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>nlin/<wbr/>0012019</a></li>
+<li id="ru-ref-9">Bucher T. et al. Superluminal correlations in ensembles of optical phase singularities. Nature 651, 920–926 (2026). <a class="bare" href="https://doi.org/10.1038/s41586-026-10209-z" rel="noopener" target="_blank">https://doi<wbr/>.org/<wbr/>10<wbr/>.1038/<wbr/>s41586<wbr/>-026<wbr/>-10209<wbr/>-z</a></li>
+<li id="ru-ref-10">Perelman G. The entropy formula for the Ricci flow and its geometric applications. arXiv:math/0211159 (2002). <a class="bare" href="https://arxiv.org/abs/math/0211159" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>math/<wbr/>0211159</a></li>
+<li id="ru-ref-11">Lawrence Livermore National Laboratory. LLNL’s breakthrough ignition experiment highlighted in Physical Review Letters (5 February 2024). <a class="bare" href="https://lmf.llnl.gov/news/llnls-breakthrough-ignition-experiment-highlighted-in-physical-review-letters" rel="noopener" target="_blank">https://lmf<wbr/>.llnl<wbr/>.gov/<wbr/>news/<wbr/>llnls<wbr/>-breakthrough<wbr/>-ignition<wbr/>-experiment<wbr/>-highlighted<wbr/>-in<wbr/>-physical<wbr/>-review<wbr/>-letters</a></li>
+<li id="ru-ref-12">Datta S., Ghoshal A., Spalding A., White G. Gravitational wave spectral shapes as a probe of long lived right-handed neutrinos, leptogenesis and dark matter: global versus local B-L cosmic strings. arXiv:2511.01779 (2025). <a class="bare" href="https://arxiv.org/abs/2511.01779" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>2511<wbr/>.01779</a></li>
+<li id="ru-ref-13">European Space Agency. Capturing the ripples of spacetime: LISA gets go-ahead (25 January 2024). <a class="bare" href="https://www.esa.int/articles/about-us/directorates/science/lisa/capturing-the-ripples-of-spacetime-lisa-gets-go-ahead" rel="noopener" target="_blank">https://www<wbr/>.esa<wbr/>.int/<wbr/>articles/<wbr/>about<wbr/>-us/<wbr/>directorates/<wbr/>science/<wbr/>lisa/<wbr/>capturing<wbr/>-the<wbr/>-ripples<wbr/>-of<wbr/>-spacetime<wbr/>-lisa<wbr/>-gets<wbr/>-go<wbr/>-ahead</a></li>
+<li id="ru-ref-14">Einstein Telescope EMR. Frequently asked questions (2026). <a class="bare" href="https://www.einsteintelescope-emr.eu/en/faq/" rel="noopener" target="_blank">https://www<wbr/>.einsteintelescope<wbr/>-emr<wbr/>.eu/<wbr/>en/<wbr/>faq/</a></li>
+<li id="ru-ref-15">Biderman S. et al. Pythia: a suite for analyzing large language models across training and scaling. Proc. Mach. Learn. Res. 202, 2397–2430 (2023). <a class="bare" href="https://arxiv.org/abs/2304.01373" rel="noopener" target="_blank">https://arxiv<wbr/>.org/<wbr/>abs/<wbr/>2304<wbr/>.01373</a></li>
+<li id="ru-ref-16">IEEE. IEEE Standard for Floating-Point Arithmetic, IEEE Std 754-2019 (2019). <a class="bare" href="https://doi.org/10.1109/IEEESTD.2019.8766229" rel="noopener" target="_blank">https://doi<wbr/>.org/<wbr/>10<wbr/>.1109/<wbr/>IEEESTD<wbr/>.2019<wbr/>.8766229</a></li>
+</ol>
+<hr/>
+<p class="colophon"><em>Статья публикует результаты измерений мастерской PeGamBo. Стражи, статусы проверки и сроки пересмотра приведены к каждому числу — это условие публикации, а не украшение.</em></p>
+    </div>
+  </article>
+
+  <aside class="cite" aria-label="Citation">
+    <p class="k"><span data-lang="en">How to cite</span><span data-lang="ru">Как цитировать</span></p>
+    <p><span data-lang="en">Bortnikov, O. (2026). The Dark Sector as Bookkeeping: Four Measurable Properties Instead of a Name. PeGamBo research note, revision 2, 19 November 2026. DOI: <a href="https://doi.org/10.5281/zenodo.24372606" rel="noopener" target="_blank">10.5281/zenodo.24372606</a>. https://pegambo.com/research/dark-ledger/</span><span data-lang="ru">Бортников О. Тёмный сектор как бухгалтерия: четыре измеримых свойства вместо имени // PeGamBo, научная заметка, редакция 2, 19 ноября 2026. DOI: <a href="https://doi.org/10.5281/zenodo.24372606" rel="noopener" target="_blank">10.5281/zenodo.24372606</a>. URL: https://pegambo.com/research/dark-ledger/</span></p>
+  </aside>
+
+  <div class="paper-foot">
+    <a class="js-keep-lang" href="../../"><span data-lang="en">← PeGamBo home</span><span data-lang="ru">← На главную PeGamBo</span></a>
+    <span class="kbd"><span data-lang="en">Print / save as PDF: Ctrl/⌘ + P</span><span data-lang="ru">Печать / PDF: Ctrl/⌘ + P</span></span>
+  </div>
+</main>
+<!-- main:end -->
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 PeGamBo · <span data-lang="en">Founder: Oleg Bortnikov</span><span data-lang="ru">Основатель: Олег Бортников</span></span>
+    <span><a class="js-mail" href="#contact" data-u="olleh" data-d="moc.obmagep"><span class="js-mail-text">hello [at] pegambo.com</span></a> · <a href="https://orcid.org/0009-0004-6221-5389" rel="noopener" target="_blank">ORCID</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btns=document.querySelectorAll('.lang button');
+  var titles={"en": "The Dark Sector as Bookkeeping: Four Measurable Properties Instead of a Name — PeGamBo", "ru": "Тёмный сектор как бухгалтерия: четыре измеримых свойства вместо имени — PeGamBo"};
+  function sync(){document.querySelectorAll('a.js-keep-lang').forEach(function(a){var b=a.getAttribute('data-href')||a.getAttribute('href').split('?')[0];a.setAttribute('data-href',b);a.setAttribute('href',b+'?lang='+root.lang);});}
+  function set(l){root.lang=l;document.title=titles[l];btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l)});sync();}
+  var q=(location.search.match(/lang=(en|ru)/)||[])[1];
+  set(q||((navigator.language||'').toLowerCase().indexOf('ru')===0?'ru':'en'));
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+})();
+</script>
+<script>
+(function(){
+  function rev(s){return s.split('').reverse().join('');}
+  document.querySelectorAll('.js-mail').forEach(function(a){
+    var addr=rev(a.getAttribute('data-u'))+String.fromCharCode(64)+rev(a.getAttribute('data-d'));
+    a.setAttribute('href','mai'+'lto:'+addr);
+    var s=a.querySelector('.js-mail-text'); if(s) s.textContent=addr;
+  });
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "65e535b5e087427fa662f7d919895b83"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

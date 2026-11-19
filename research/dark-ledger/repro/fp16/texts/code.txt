@@ -1,0 +1,23 @@
+import heapq
+
+def dijkstra(graph, source):
+    """Return shortest distances from source to every reachable node."""
+    dist = {node: float("inf") for node in graph}
+    dist[source] = 0
+    queue = [(0, source)]
+    visited = set()
+    while queue:
+        d, u = heapq.heappop(queue)
+        if u in visited:
+            continue
+        visited.add(u)
+        for v, weight in graph[u].items():
+            nd = d + weight
+            if nd < dist[v]:
+                dist[v] = nd
+                heapq.heappush(queue, (nd, v))
+    return dist
+
+if __name__ == "__main__":
+    g = {"a": {"b": 1, "c": 4}, "b": {"c": 2, "d": 5}, "c": {"d": 1}, "d": {}}
+    print(dijkstra(g, "a"))

@@ -1,0 +1,4 @@
+# Python 3.10+; see results.json for reference NumPy and SciPy versions.
+numpy>=2.0,<3
+scipy>=1.13,<2
+mpmath>=1.3,<2

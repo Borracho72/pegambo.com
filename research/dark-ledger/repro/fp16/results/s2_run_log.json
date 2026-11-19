@@ -1,0 +1,2048 @@
+{
+ "env": {
+  "torch": "2.15.0+cpu",
+  "transformers": "5.23.0",
+  "python": "3.14.8 (main, Oct 14 2026, 01:04:34) [Clang 23.1.3 ]",
+  "platform": "Linux-6.1.155-x86_64-with-glibc2.43",
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.90GHz",
+  "threads": 2,
+  "model": "EleutherAI/pythia-160m",
+  "attn_implementation": "eager"
+ },
+ "runs": {
+  "prose_fp64": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 172,
+   "dtype_A": "torch.float64",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 1000.9294983053301,
+   "max_abs_by_layer": {
+    "layer0": 39.091951465008954,
+    "layer1": 31.573275183773532,
+    "layer2": 62.56930829509622,
+    "layer3": 202.01696960610127,
+    "layer4": 129.12171472254525,
+    "layer5": 166.63203125616516,
+    "layer6": 470.56450831285304,
+    "layer7": 450.447346873216,
+    "layer8": 791.1177301493633,
+    "layer9": 598.974560483746,
+    "layer10": 1000.9294983053301,
+    "layer11": 808.5829467520073
+   }
+  },
+  "code_fp64": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 233,
+   "dtype_A": "torch.float64",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 1055.4745434405409,
+   "max_abs_by_layer": {
+    "layer0": 39.091951465008954,
+    "layer1": 39.93241687648852,
+    "layer2": 69.43690425370531,
+    "layer3": 204.6162049620181,
+    "layer4": 154.61045438025508,
+    "layer5": 191.09967726288232,
+    "layer6": 462.1921821981844,
+    "layer7": 576.1101585454105,
+    "layer8": 959.0191161463181,
+    "layer9": 694.390351056561,
+    "layer10": 1055.4745434405409,
+    "layer11": 1012.5362894056024
+   }
+  },
+  "arith_fp64": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 181,
+   "dtype_A": "torch.float64",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 999.903916190279,
+   "max_abs_by_layer": {
+    "layer0": 39.091951465008954,
+    "layer1": 46.55747241685722,
+    "layer2": 62.14072012176069,
+    "layer3": 210.52429439362078,
+    "layer4": 103.16521143121676,
+    "layer5": 161.3032046424568,
+    "layer6": 366.32822797496135,
+    "layer7": 433.47106871305425,
+    "layer8": 731.7479353820777,
+    "layer9": 695.9068377479707,
+    "layer10": 999.903916190279,
+    "layer11": 936.891593348372
+   }
+  },
+  "prose_fp32": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 172,
+   "dtype_A": "torch.float32",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 1000.927001953125,
+   "max_abs_by_layer": {
+    "layer0": 39.09195327758789,
+    "layer1": 31.57329559326172,
+    "layer2": 62.5693359375,
+    "layer3": 202.01690673828125,
+    "layer4": 129.12210083007812,
+    "layer5": 166.63160705566406,
+    "layer6": 470.564208984375,
+    "layer7": 450.4444274902344,
+    "layer8": 791.115478515625,
+    "layer9": 598.9664916992188,
+    "layer10": 1000.927001953125,
+    "layer11": 808.5889282226562
+   }
+  },
+  "code_fp32": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 233,
+   "dtype_A": "torch.float32",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 1055.467529296875,
+   "max_abs_by_layer": {
+    "layer0": 39.09195327758789,
+    "layer1": 39.93238830566406,
+    "layer2": 69.4369125366211,
+    "layer3": 204.61627197265625,
+    "layer4": 154.61056518554688,
+    "layer5": 191.09906005859375,
+    "layer6": 462.1899108886719,
+    "layer7": 576.1089477539062,
+    "layer8": 959.029541015625,
+    "layer9": 694.3942260742188,
+    "layer10": 1055.467529296875,
+    "layer11": 1012.53759765625
+   }
+  },
+  "arith_fp32": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 181,
+   "dtype_A": "torch.float32",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 999.9024658203125,
+   "max_abs_by_layer": {
+    "layer0": 39.09195327758789,
+    "layer1": 46.557472229003906,
+    "layer2": 62.140708923339844,
+    "layer3": 210.52432250976562,
+    "layer4": 103.1650390625,
+    "layer5": 161.30328369140625,
+    "layer6": 366.3280029296875,
+    "layer7": 433.4827880859375,
+    "layer8": 731.73486328125,
+    "layer9": 695.9076538085938,
+    "layer10": 999.9024658203125,
+    "layer11": 936.8929443359375
+   }
+  },
+  "prose_fp16": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "T": 172,
+   "dtype_A": "torch.float16",
+   "first_nonfinite": {
+    "module": "gpt_neox.layers.4.attention.dense",
+    "n_nonfinite": 6144,
+    "n_nan": 6144,
+    "n_inf": 0
+   },
+   "n_nonfinite_events": 90,
+   "nonfinite_events": [
+    {
+     "module": "gpt_neox.layers.4.attention.dense",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.4.attention",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.4.post_attention_dropout",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.4",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.input_layernorm",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention.query_key_value",
+     "n_nonfinite": 18432,
+     "n_nan": 18432,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention.dense",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_attention_dropout",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_attention_layernorm",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp.dense_h_to_4h",
+     "n_nonfinite": 24576,
+     "n_nan": 24576,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp.act",
+     "n_nonfinite": 24576,
+     "n_nan": 24576,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp.dense_4h_to_h",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_mlp_dropout",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.input_layernorm",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention.query_key_value",
+     "n_nonfinite": 396288,
+     "n_nan": 396288,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention.dense",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    }
+   ],
+   "logits_finite": false,
+   "attn_finite": false,
+   "max_abs_activation_overall": 270.0,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 31.578125,
+    "layer2": 62.5625,
+    "layer3": 202.125,
+    "layer4": 128.5,
+    "layer5": NaN,
+    "layer6": NaN,
+    "layer7": NaN,
+    "layer8": NaN,
+    "layer9": NaN,
+    "layer10": NaN,
+    "layer11": NaN
+   }
+  },
+  "code_fp16": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "T": 233,
+   "dtype_A": "torch.float16",
+   "first_nonfinite": {
+    "module": "gpt_neox.layers.4.attention.dense",
+    "n_nonfinite": 21504,
+    "n_nan": 21504,
+    "n_inf": 0
+   },
+   "n_nonfinite_events": 90,
+   "nonfinite_events": [
+    {
+     "module": "gpt_neox.layers.4.attention.dense",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.4.attention",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.4.post_attention_dropout",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.4",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.input_layernorm",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention.query_key_value",
+     "n_nonfinite": 64512,
+     "n_nan": 64512,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention.dense",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_attention_dropout",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_attention_layernorm",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp.dense_h_to_4h",
+     "n_nonfinite": 86016,
+     "n_nan": 86016,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp.act",
+     "n_nonfinite": 86016,
+     "n_nan": 86016,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp.dense_4h_to_h",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_mlp_dropout",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.input_layernorm",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention.query_key_value",
+     "n_nonfinite": 536832,
+     "n_nan": 536832,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention.dense",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    }
+   ],
+   "logits_finite": false,
+   "attn_finite": false,
+   "max_abs_activation_overall": 272.0,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 39.90625,
+    "layer2": 69.375,
+    "layer3": 204.625,
+    "layer4": 155.125,
+    "layer5": NaN,
+    "layer6": NaN,
+    "layer7": NaN,
+    "layer8": NaN,
+    "layer9": NaN,
+    "layer10": NaN,
+    "layer11": NaN
+   }
+  },
+  "arith_fp16": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "T": 181,
+   "dtype_A": "torch.float16",
+   "first_nonfinite": {
+    "module": "gpt_neox.layers.5.attention.dense",
+    "n_nonfinite": 115968,
+    "n_nan": 115968,
+    "n_inf": 0
+   },
+   "n_nonfinite_events": 78,
+   "nonfinite_events": [
+    {
+     "module": "gpt_neox.layers.5.attention.dense",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_attention_dropout",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.input_layernorm",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention.query_key_value",
+     "n_nonfinite": 347904,
+     "n_nan": 347904,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention.dense",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.post_attention_dropout",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.post_attention_layernorm",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.mlp.dense_h_to_4h",
+     "n_nonfinite": 463872,
+     "n_nan": 463872,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.mlp.act",
+     "n_nonfinite": 463872,
+     "n_nan": 463872,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.mlp.dense_4h_to_h",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.mlp",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.post_mlp_dropout",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.7.input_layernorm",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.7.attention.query_key_value",
+     "n_nonfinite": 417024,
+     "n_nan": 417024,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.7.attention.dense",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.7.attention",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    }
+   ],
+   "logits_finite": false,
+   "attn_finite": false,
+   "max_abs_activation_overall": 281.75,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 46.5625,
+    "layer2": 62.15625,
+    "layer3": 210.5,
+    "layer4": 103.25,
+    "layer5": 163.25,
+    "layer6": NaN,
+    "layer7": NaN,
+    "layer8": NaN,
+    "layer9": NaN,
+    "layer10": NaN,
+    "layer11": NaN
+   }
+  },
+  "prose_fp16_puresoftmax": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "T": 172,
+   "dtype_A": "torch.float16",
+   "first_nonfinite": {
+    "module": "gpt_neox.layers.4.attention.dense",
+    "n_nonfinite": 6144,
+    "n_nan": 6144,
+    "n_inf": 0
+   },
+   "n_nonfinite_events": 90,
+   "nonfinite_events": [
+    {
+     "module": "gpt_neox.layers.4.attention.dense",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.4.attention",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.4.post_attention_dropout",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.4",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.input_layernorm",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention.query_key_value",
+     "n_nonfinite": 18432,
+     "n_nan": 18432,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention.dense",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_attention_dropout",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_attention_layernorm",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp.dense_h_to_4h",
+     "n_nonfinite": 24576,
+     "n_nan": 24576,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp.act",
+     "n_nonfinite": 24576,
+     "n_nan": 24576,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp.dense_4h_to_h",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_mlp_dropout",
+     "n_nonfinite": 6144,
+     "n_nan": 6144,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.input_layernorm",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention.query_key_value",
+     "n_nonfinite": 396288,
+     "n_nan": 396288,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention.dense",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    }
+   ],
+   "logits_finite": false,
+   "attn_finite": false,
+   "max_abs_activation_overall": 270.0,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 31.578125,
+    "layer2": 62.5625,
+    "layer3": 202.125,
+    "layer4": 128.5,
+    "layer5": NaN,
+    "layer6": NaN,
+    "layer7": NaN,
+    "layer8": NaN,
+    "layer9": NaN,
+    "layer10": NaN,
+    "layer11": NaN
+   }
+  },
+  "code_fp16_puresoftmax": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "T": 233,
+   "dtype_A": "torch.float16",
+   "first_nonfinite": {
+    "module": "gpt_neox.layers.4.attention.dense",
+    "n_nonfinite": 21504,
+    "n_nan": 21504,
+    "n_inf": 0
+   },
+   "n_nonfinite_events": 90,
+   "nonfinite_events": [
+    {
+     "module": "gpt_neox.layers.4.attention.dense",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.4.attention",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.4.post_attention_dropout",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.4",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.input_layernorm",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention.query_key_value",
+     "n_nonfinite": 64512,
+     "n_nan": 64512,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention.dense",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_attention_dropout",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_attention_layernorm",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp.dense_h_to_4h",
+     "n_nonfinite": 86016,
+     "n_nan": 86016,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp.act",
+     "n_nonfinite": 86016,
+     "n_nan": 86016,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp.dense_4h_to_h",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.mlp",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_mlp_dropout",
+     "n_nonfinite": 21504,
+     "n_nan": 21504,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.input_layernorm",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention.query_key_value",
+     "n_nonfinite": 536832,
+     "n_nan": 536832,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention.dense",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    }
+   ],
+   "logits_finite": false,
+   "attn_finite": false,
+   "max_abs_activation_overall": 272.0,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 39.90625,
+    "layer2": 69.375,
+    "layer3": 204.625,
+    "layer4": 155.125,
+    "layer5": NaN,
+    "layer6": NaN,
+    "layer7": NaN,
+    "layer8": NaN,
+    "layer9": NaN,
+    "layer10": NaN,
+    "layer11": NaN
+   }
+  },
+  "arith_fp16_puresoftmax": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "T": 181,
+   "dtype_A": "torch.float16",
+   "first_nonfinite": {
+    "module": "gpt_neox.layers.5.attention.dense",
+    "n_nonfinite": 115968,
+    "n_nan": 115968,
+    "n_inf": 0
+   },
+   "n_nonfinite_events": 78,
+   "nonfinite_events": [
+    {
+     "module": "gpt_neox.layers.5.attention.dense",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.attention",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5.post_attention_dropout",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.5",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.input_layernorm",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention.query_key_value",
+     "n_nonfinite": 347904,
+     "n_nan": 347904,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention.dense",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.attention",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.post_attention_dropout",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.post_attention_layernorm",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.mlp.dense_h_to_4h",
+     "n_nonfinite": 463872,
+     "n_nan": 463872,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.mlp.act",
+     "n_nonfinite": 463872,
+     "n_nan": 463872,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.mlp.dense_4h_to_h",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.mlp",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6.post_mlp_dropout",
+     "n_nonfinite": 115968,
+     "n_nan": 115968,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.6",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.7.input_layernorm",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.7.attention.query_key_value",
+     "n_nonfinite": 417024,
+     "n_nan": 417024,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.7.attention.dense",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.7.attention",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    }
+   ],
+   "logits_finite": false,
+   "attn_finite": false,
+   "max_abs_activation_overall": 281.75,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 46.5625,
+    "layer2": 62.15625,
+    "layer3": 210.5,
+    "layer4": 103.25,
+    "layer5": 163.25,
+    "layer6": NaN,
+    "layer7": NaN,
+    "layer8": NaN,
+    "layer9": NaN,
+    "layer10": NaN,
+    "layer11": NaN
+   }
+  },
+  "prose_fp16_prescale": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false
+   ],
+   "T": 172,
+   "dtype_A": "torch.float16",
+   "first_nonfinite": {
+    "module": "gpt_neox.layers.10.attention.dense",
+    "n_nonfinite": 49152,
+    "n_nan": 49152,
+    "n_inf": 0
+   },
+   "n_nonfinite_events": 18,
+   "nonfinite_events": [
+    {
+     "module": "gpt_neox.layers.10.attention.dense",
+     "n_nonfinite": 49152,
+     "n_nan": 49152,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.10.attention",
+     "n_nonfinite": 49152,
+     "n_nan": 49152,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.10.post_attention_dropout",
+     "n_nonfinite": 49152,
+     "n_nan": 49152,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.10",
+     "n_nonfinite": 49152,
+     "n_nan": 49152,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.input_layernorm",
+     "n_nonfinite": 49152,
+     "n_nan": 49152,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.attention.query_key_value",
+     "n_nonfinite": 147456,
+     "n_nan": 147456,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.attention.dense",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.attention",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.post_attention_dropout",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.post_attention_layernorm",
+     "n_nonfinite": 49152,
+     "n_nan": 49152,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.mlp.dense_h_to_4h",
+     "n_nonfinite": 196608,
+     "n_nan": 196608,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.mlp.act",
+     "n_nonfinite": 196608,
+     "n_nan": 196608,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.mlp.dense_4h_to_h",
+     "n_nonfinite": 49152,
+     "n_nan": 49152,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.mlp",
+     "n_nonfinite": 49152,
+     "n_nan": 49152,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.post_mlp_dropout",
+     "n_nonfinite": 49152,
+     "n_nan": 49152,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.final_layer_norm",
+     "n_nonfinite": 132096,
+     "n_nan": 132096,
+     "n_inf": 0
+    },
+    {
+     "module": "lm_head",
+     "n_nonfinite": 8652288,
+     "n_nan": 8652288,
+     "n_inf": 0
+    }
+   ],
+   "logits_finite": false,
+   "attn_finite": false,
+   "max_abs_activation_overall": 1015.0,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 31.578125,
+    "layer2": 62.5625,
+    "layer3": 202.125,
+    "layer4": 128.5,
+    "layer5": 167.125,
+    "layer6": 470.0,
+    "layer7": 459.0,
+    "layer8": 794.5,
+    "layer9": 602.0,
+    "layer10": 1015.0,
+    "layer11": NaN
+   }
+  },
+  "code_fp16_prescale": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false
+   ],
+   "T": 233,
+   "dtype_A": "torch.float16",
+   "first_nonfinite": {
+    "module": "gpt_neox.layers.10.attention.dense",
+    "n_nonfinite": 86016,
+    "n_nan": 86016,
+    "n_inf": 0
+   },
+   "n_nonfinite_events": 18,
+   "nonfinite_events": [
+    {
+     "module": "gpt_neox.layers.10.attention.dense",
+     "n_nonfinite": 86016,
+     "n_nan": 86016,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.10.attention",
+     "n_nonfinite": 86016,
+     "n_nan": 86016,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.10.post_attention_dropout",
+     "n_nonfinite": 86016,
+     "n_nan": 86016,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.10",
+     "n_nonfinite": 86016,
+     "n_nan": 86016,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.input_layernorm",
+     "n_nonfinite": 86016,
+     "n_nan": 86016,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.attention.query_key_value",
+     "n_nonfinite": 258048,
+     "n_nan": 258048,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.attention.dense",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.attention",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.post_attention_dropout",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.post_attention_layernorm",
+     "n_nonfinite": 86016,
+     "n_nan": 86016,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.mlp.dense_h_to_4h",
+     "n_nonfinite": 344064,
+     "n_nan": 344064,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.mlp.act",
+     "n_nonfinite": 344064,
+     "n_nan": 344064,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.mlp.dense_4h_to_h",
+     "n_nonfinite": 86016,
+     "n_nan": 86016,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.mlp",
+     "n_nonfinite": 86016,
+     "n_nan": 86016,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.post_mlp_dropout",
+     "n_nonfinite": 86016,
+     "n_nan": 86016,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.final_layer_norm",
+     "n_nonfinite": 178944,
+     "n_nan": 178944,
+     "n_inf": 0
+    },
+    {
+     "module": "lm_head",
+     "n_nonfinite": 11720832,
+     "n_nan": 11720832,
+     "n_inf": 0
+    }
+   ],
+   "logits_finite": false,
+   "attn_finite": false,
+   "max_abs_activation_overall": 1063.0,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 39.90625,
+    "layer2": 69.375,
+    "layer3": 204.625,
+    "layer4": 155.125,
+    "layer5": 192.25,
+    "layer6": 461.0,
+    "layer7": 566.0,
+    "layer8": 924.0,
+    "layer9": 689.5,
+    "layer10": 1063.0,
+    "layer11": NaN
+   }
+  },
+  "arith_fp16_prescale": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false
+   ],
+   "T": 181,
+   "dtype_A": "torch.float16",
+   "first_nonfinite": {
+    "module": "gpt_neox.layers.10.attention.dense",
+    "n_nonfinite": 110592,
+    "n_nan": 110592,
+    "n_inf": 0
+   },
+   "n_nonfinite_events": 18,
+   "nonfinite_events": [
+    {
+     "module": "gpt_neox.layers.10.attention.dense",
+     "n_nonfinite": 110592,
+     "n_nan": 110592,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.10.attention",
+     "n_nonfinite": 110592,
+     "n_nan": 110592,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.10.post_attention_dropout",
+     "n_nonfinite": 110592,
+     "n_nan": 110592,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.10",
+     "n_nonfinite": 110592,
+     "n_nan": 110592,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.input_layernorm",
+     "n_nonfinite": 110592,
+     "n_nan": 110592,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.attention.query_key_value",
+     "n_nonfinite": 331776,
+     "n_nan": 331776,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.attention.dense",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.attention",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.post_attention_dropout",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.post_attention_layernorm",
+     "n_nonfinite": 110592,
+     "n_nan": 110592,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.mlp.dense_h_to_4h",
+     "n_nonfinite": 442368,
+     "n_nan": 442368,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.mlp.act",
+     "n_nonfinite": 442368,
+     "n_nan": 442368,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.mlp.dense_4h_to_h",
+     "n_nonfinite": 110592,
+     "n_nan": 110592,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.mlp",
+     "n_nonfinite": 110592,
+     "n_nan": 110592,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11.post_mlp_dropout",
+     "n_nonfinite": 110592,
+     "n_nan": 110592,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.layers.11",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "gpt_neox.final_layer_norm",
+     "n_nonfinite": 139008,
+     "n_nan": 139008,
+     "n_inf": 0
+    },
+    {
+     "module": "lm_head",
+     "n_nonfinite": 9105024,
+     "n_nan": 9105024,
+     "n_inf": 0
+    }
+   ],
+   "logits_finite": false,
+   "attn_finite": false,
+   "max_abs_activation_overall": 937.5,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 46.5625,
+    "layer2": 62.15625,
+    "layer3": 210.5,
+    "layer4": 103.25,
+    "layer5": 163.25,
+    "layer6": 372.25,
+    "layer7": 438.75,
+    "layer8": 728.0,
+    "layer9": 689.5,
+    "layer10": 937.5,
+    "layer11": NaN
+   }
+  },
+  "prose_fp16_sdpa": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 172,
+   "dtype_A": "torch.float32",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 996.0,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 31.5625,
+    "layer2": 62.53125,
+    "layer3": 202.125,
+    "layer4": 128.875,
+    "layer5": 166.875,
+    "layer6": 470.75,
+    "layer7": 449.75,
+    "layer8": 791.0,
+    "layer9": 597.5,
+    "layer10": 996.0,
+    "layer11": 803.5
+   }
+  },
+  "code_fp16_sdpa": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 233,
+   "dtype_A": "torch.float32",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 1055.0,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 39.90625,
+    "layer2": 69.4375,
+    "layer3": 204.625,
+    "layer4": 154.625,
+    "layer5": 190.75,
+    "layer6": 462.75,
+    "layer7": 577.0,
+    "layer8": 956.0,
+    "layer9": 695.0,
+    "layer10": 1055.0,
+    "layer11": 1013.0
+   }
+  },
+  "arith_fp16_sdpa": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 181,
+   "dtype_A": "torch.float32",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 982.5,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 46.5625,
+    "layer2": 62.125,
+    "layer3": 210.5,
+    "layer4": 103.0625,
+    "layer5": 162.0,
+    "layer6": 366.5,
+    "layer7": 433.0,
+    "layer8": 737.0,
+    "layer9": 697.0,
+    "layer10": 982.5,
+    "layer11": 950.5
+   }
+  },
+  "prose_fp16_upcastQK": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 172,
+   "dtype_A": "torch.float16",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 991.0,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 31.5625,
+    "layer2": 62.53125,
+    "layer3": 202.125,
+    "layer4": 129.0,
+    "layer5": 166.875,
+    "layer6": 470.75,
+    "layer7": 449.25,
+    "layer8": 791.5,
+    "layer9": 598.0,
+    "layer10": 991.0,
+    "layer11": 806.0
+   }
+  },
+  "code_fp16_upcastQK": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 233,
+   "dtype_A": "torch.float16",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 1055.0,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 39.90625,
+    "layer2": 69.4375,
+    "layer3": 204.625,
+    "layer4": 154.625,
+    "layer5": 190.75,
+    "layer6": 462.75,
+    "layer7": 576.5,
+    "layer8": 955.0,
+    "layer9": 694.5,
+    "layer10": 1055.0,
+    "layer11": 1014.5
+   }
+  },
+  "arith_fp16_upcastQK": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 181,
+   "dtype_A": "torch.float16",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 1004.5,
+   "max_abs_by_layer": {
+    "layer0": 39.09375,
+    "layer1": 46.5625,
+    "layer2": 62.125,
+    "layer3": 210.5,
+    "layer4": 103.125,
+    "layer5": 162.625,
+    "layer6": 366.5,
+    "layer7": 432.25,
+    "layer8": 736.0,
+    "layer9": 696.5,
+    "layer10": 1004.5,
+    "layer11": 950.0
+   }
+  },
+  "prose_fp64_true": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 172,
+   "dtype_A": "torch.float64",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 1000.9314042239873,
+   "max_abs_by_layer": {
+    "layer0": 39.091951465008954,
+    "layer1": 31.573272420953323,
+    "layer2": 62.56930775260213,
+    "layer3": 202.01696960610127,
+    "layer4": 129.1217748050081,
+    "layer5": 166.63201730320378,
+    "layer6": 470.564431751327,
+    "layer7": 450.4442759767769,
+    "layer8": 791.1177856541187,
+    "layer9": 598.9739406696245,
+    "layer10": 1000.9314042239873,
+    "layer11": 808.5844360793164
+   }
+  },
+  "code_fp64_true": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 233,
+   "dtype_A": "torch.float64",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 1055.4734399375895,
+   "max_abs_by_layer": {
+    "layer0": 39.091951465008954,
+    "layer1": 39.9324169741606,
+    "layer2": 69.43690580306708,
+    "layer3": 204.6162049620181,
+    "layer4": 154.61043370601172,
+    "layer5": 191.09983021465558,
+    "layer6": 462.19224594929085,
+    "layer7": 576.1100413386487,
+    "layer8": 959.0185192394663,
+    "layer9": 694.3888330829645,
+    "layer10": 1055.4734399375895,
+    "layer11": 1012.5360181554238
+   }
+  },
+  "arith_fp64_true": {
+   "hidden_states_finite_by_layer": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "T": 181,
+   "dtype_A": "torch.float64",
+   "first_nonfinite": null,
+   "n_nonfinite_events": 0,
+   "nonfinite_events": [],
+   "logits_finite": true,
+   "attn_finite": true,
+   "max_abs_activation_overall": 999.9087718499941,
+   "max_abs_by_layer": {
+    "layer0": 39.091951465008954,
+    "layer1": 46.557473369146194,
+    "layer2": 62.1407204951297,
+    "layer3": 210.52429439362078,
+    "layer4": 103.1651992924674,
+    "layer5": 161.303110285797,
+    "layer6": 366.32880512364784,
+    "layer7": 433.47414355489923,
+    "layer8": 731.7493121759373,
+    "layer9": 695.9072878490463,
+    "layer10": 999.9087718499941,
+    "layer11": 936.8876235346348
+   }
+  }
+ }
+}

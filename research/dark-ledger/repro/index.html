@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reproduction materials — The Dark Sector as Bookkeeping: Four Measurable Properties… — PeGamBo</title>
+<!-- meta:start -->
+<meta name="description" content="Code, our result tables and the environment description for independent checks of sections 2 and 3 of the note “The Dark Sector as Bookkeeping: Four Measurable Properties Instead of a Name”. Each section is self-contained: a README with run instructions, scripts and results. The PeGamBo computational core is not included.">
+<link rel="canonical" href="https://pegambo.com/research/dark-ledger/repro/">
+<link rel="alternate" hreflang="en" href="https://pegambo.com/research/dark-ledger/repro/?lang=en">
+<link rel="alternate" hreflang="ru" href="https://pegambo.com/research/dark-ledger/repro/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://pegambo.com/research/dark-ledger/repro/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PeGamBo">
+<meta property="og:url" content="https://pegambo.com/research/dark-ledger/repro/">
+<meta property="og:title" content="Reproduction materials — The Dark Sector as Bookkeeping: Four Measurable Properties… — PeGamBo">
+<meta name="twitter:card" content="summary">
+<!-- meta:end -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111a1f'/%3E%3Ccircle cx='10' cy='11' r='3' fill='%23e8b04a'/%3E%3Ccircle cx='22' cy='9' r='2.4' fill='%23f2efe8'/%3E%3Ccircle cx='17' cy='22' r='3.2' fill='%23f2efe8'/%3E%3Cpath d='M10 11 22 9 17 22Z' fill='none' stroke='%23f2efe8' stroke-width='1.2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2efe8; --ink:#111a1f; --muted:#5d6a70; --line:#d6d1c5; --accent:#b7791f; --accent-ink:#8a5a12;
+  --panel:#ebe7dd;
+  --sans:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --measure:40rem;
+}
+html[lang="en"]{--measure:37.5rem}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 28px}
+header{border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-weight:700;letter-spacing:-.01em;font-size:19px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand svg{width:26px;height:26px}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;font-family:var(--mono);font-size:13px}
+.lang button{border:0;background:transparent;color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer;font:inherit}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.lang button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{flex:1}
+footer{border-top:1px solid var(--line);margin-top:24px}
+.foot{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;padding:24px 0 30px;font-size:14px;color:var(--muted)}
+.foot a{text-decoration:none;border-bottom:1px solid var(--line)}
+.foot a:hover{color:var(--ink);border-color:var(--ink)}
+[data-lang]{display:none}
+html[lang="en"] [data-lang="en"], html[lang="ru"] [data-lang="ru"]{display:revert}
+
+/* ---------- note ---------- */
+main.note-page{padding-top:40px;padding-bottom:56px}
+.crumbs{max-width:var(--measure);margin:0 auto 40px;font-family:var(--mono);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.crumbs a{text-decoration:none;border-bottom:1px solid var(--line)}
+.crumbs a:hover{color:var(--ink);border-color:var(--ink)}
+.crumbs .sep{color:var(--line)}
+.paper{max-width:var(--measure);margin:0 auto}
+.paper-kicker{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.paper-kicker{flex-wrap:wrap;column-gap:.4em;row-gap:2px}.paper-kicker .ks{white-space:nowrap}
+.paper-kicker i{margin-right:calc(10px - .4em)}
+.paper-kicker i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
+.prose{font-size:18px;line-height:1.68;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word;font-variant-numeric:lining-nums tabular-nums}
+.prose h1{font-size:clamp(30px,4.4vw,46px);line-height:1.1;letter-spacing:-.022em;font-weight:600;hyphens:manual;-webkit-hyphens:manual;text-wrap:balance}
+.prose .byline{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:13.5px;line-height:1.7;color:var(--muted);hyphens:manual;-webkit-hyphens:manual}
+.prose .byline .seg{white-space:nowrap}
+@media (max-width:420px){.prose .byline .seg{white-space:normal}}
+.prose .byline strong{font-family:var(--sans);font-size:16px;font-weight:600;color:var(--ink)}
+.prose hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+.prose .byline+hr{margin-top:20px}
+.prose .doiline{margin-top:8px;font-family:var(--mono);font-size:13.5px;color:var(--muted)}
+.prose .doiline .k{color:var(--accent-ink);letter-spacing:.06em;margin-right:4px}
+.prose .doiline a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.prose .doiline+hr{margin-top:20px}
+.prose p{margin:0 0 1.05em}
+.prose h2{font-size:clamp(23px,2.6vw,28px);line-height:1.22;letter-spacing:-.015em;font-weight:600;margin:2.1em 0 .7em;hyphens:manual;-webkit-hyphens:manual;scroll-margin-top:24px;text-wrap:balance}
+.prose h3{font-size:20px;line-height:1.3;font-weight:600;margin:1.7em 0 .5em}
+.prose h2 .hn{font-family:var(--mono);font-weight:500;font-size:.62em;color:var(--accent-ink);letter-spacing:.02em;vertical-align:.18em;margin-right:.65em}
+.prose h2 .anchor{margin-left:.4em;font-family:var(--mono);font-size:.6em;color:var(--line);text-decoration:none;opacity:0;transition:opacity .15s}
+.prose h2:hover .anchor,.prose h2 .anchor:focus-visible{opacity:1;color:var(--accent-ink)}
+.prose strong{font-weight:600}
+.prose em{font-style:italic}
+.prose a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+.prose a:hover{text-decoration-thickness:2px}
+.prose a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.prose ul,.prose ol{margin:0 0 1.2em;padding-left:1.4em}
+.prose li{margin:.45em 0;padding-left:.25em}
+.prose ul>li::marker{color:var(--accent)}
+.prose ol>li::marker{font-family:var(--mono);font-size:.82em;color:var(--accent-ink)}
+.prose sup,.prose sub{font-size:.72em;line-height:0;position:relative;vertical-align:baseline}
+.prose sup{top:-.5em}.prose sub{bottom:-.25em}
+.prose code{font-family:var(--mono);font-size:.86em;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:.05em .35em;white-space:nowrap}
+.prose pre{font-family:var(--mono);font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;overflow-x:auto;margin:0 0 1.2em;line-height:1.5}
+.prose pre code{background:none;border:0;padding:0;white-space:pre}
+.prose blockquote{margin:0 0 1.2em;padding:2px 0 2px 20px;border-left:2px solid var(--line);color:var(--muted)}
+/* guard / caveat */
+.prose .guard{margin:-.2em 0 1.4em;padding:14px 18px 14px 18px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px 10px 10px 4px;font-size:15.5px;line-height:1.6;color:#3b474d}
+.prose .guard p{margin:0}
+.prose .guard p+p{margin-top:.6em}
+.prose .guard .glabel{display:block;font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:4px}
+/* verification status */
+.prose section.verify{margin:2.2em 0 1.6em;padding:22px 24px 8px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.prose section.verify>h2:first-child{margin-top:0;font-size:20px}
+.prose section.verify>p,.prose section.verify li{font-size:16px}
+.prose p.verify{margin:-.3em 0 1.5em;padding:12px 0 0;border-top:1px dashed var(--line);font-size:15.5px;line-height:1.6;color:var(--muted)}
+.prose p.verify .vlabel{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-weight:600;margin-right:.2em}
+.prose p.verify .vlabel::before{content:"";width:7px;height:7px;border-radius:50%;border:1.5px solid var(--ink);flex:none;transform:translateY(-1px)}
+.prose .guard+p.verify{margin-top:-.4em}
+/* tables */
+.tbl{overflow-x:auto;margin:0 0 1.6em;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.tbl.wide{position:relative;width:min(880px,calc(100vw - 56px));left:50%;transform:translateX(-50%)}
+.prose table.cols3 th:nth-child(1){width:29%}.prose table.cols3 th:nth-child(2){width:27%}
+.prose table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.45}
+.prose th,.prose td{padding:9px 12px 9px 0;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.prose tr:last-child td{border-bottom:0}
+.prose td{overflow-wrap:break-word;hyphens:auto}
+.prose th{font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.02em;color:var(--muted);border-bottom:1px solid var(--ink)}
+.prose td.num,.prose th.num{font-family:var(--mono);font-size:14px;text-align:right;white-space:nowrap;padding-left:12px}
+/* references */
+.prose ol.refs{padding-left:2.2em;font-size:15.5px;line-height:1.55;hyphens:manual;-webkit-hyphens:manual}
+.prose ol.refs li{margin:.6em 0;scroll-margin-top:24px;border-radius:4px;transition:background .3s}
+.prose ol.refs li:target{background:#f7e7c6;box-shadow:0 0 0 6px #f7e7c6}
+.prose a.cite-ref{text-decoration:none;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.prose a.cite-ref:hover{text-decoration:underline}
+.prose ol.refs a{overflow-wrap:break-word}
+.prose .footnote{margin-top:2.5em;font-size:15px;color:var(--muted)}
+.prose .footnote hr{margin:0 0 1em}
+.prose .footnote-ref,.prose .footnote-backref{text-decoration:none;font-family:var(--mono)}
+/* colophon */
+.prose .colophon{margin-top:8px;font-size:15px;line-height:1.6;color:var(--muted)}
+.prose .colophon em{font-style:italic}
+.paper-foot{max-width:var(--measure);margin:48px auto 0;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.paper-foot a{text-decoration:none;border-bottom:1px solid var(--line)}
+.paper-foot a:hover{color:var(--ink);border-color:var(--ink)}
+.cite{max-width:var(--measure);margin:28px auto 0;font-size:14px;color:var(--muted)}
+.cite .k{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:6px}
+.cite p{font-family:var(--mono);font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.nojs-sep{display:none}
+/* repro page */
+main.repro-page{--measure:46rem}
+.repro{max-width:46rem;margin:0 auto}
+.repro h1{font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.022em;font-weight:600}
+.repro .lead{margin-top:16px;font-size:18px;line-height:1.6;color:var(--muted);max-width:40rem}
+.repro .lead a,.repro .rsec a.back{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.repro .meta{margin-top:18px;font-family:var(--mono);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
+.repro .meta a{border-bottom:1px solid var(--line);text-decoration:none}
+.rsec{margin-top:44px}
+.rsec h2{font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+.rsec .k{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px}
+.rsec .desc{color:var(--muted);font-size:16px;margin-bottom:14px;max-width:40rem}
+.files{list-style:none;border-top:1px solid var(--ink)}
+.files li{border-bottom:1px solid var(--line)}
+.files a{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:baseline;padding:11px 0;text-decoration:none}
+.files .fn{font-family:var(--mono);font-size:14px;overflow-wrap:break-word;min-width:0}
+.files .fn .dir{color:var(--muted)}
+.files .fs{font-family:var(--mono);font-size:12.5px;color:var(--muted);white-space:nowrap}
+.files a:hover .fn{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.files a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.files .empty{padding:14px 0;color:var(--muted);font-size:15px}
+.readme{margin-top:14px}
+.readme summary{cursor:pointer;font-family:var(--mono);font-size:13px;color:var(--accent-ink)}
+.readme pre{margin-top:10px;font-family:var(--mono);font-size:13px;line-height:1.55;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:28rem;overflow:auto}
+.zip{margin-top:22px;display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--bg);text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:500;font-size:15px}
+.zip:hover{background:#24323a}.zip small{font-family:var(--mono);font-size:12px;opacity:.75;white-space:nowrap}
+
+@media (max-width:420px){.files .fn{font-size:13px}.zip{display:flex;flex-wrap:wrap;gap:2px 10px}}
+@media (max-width:960px){.tbl.wide{width:auto;left:auto;transform:none}}
+@media (max-width:600px){
+  .tbl{overflow:visible;border:0}
+  .prose table.cards,.prose table.cards tbody,.prose table.cards tr,.prose table.cards td{display:block;width:auto}
+  .prose table.cards thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .prose table.cards tr{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:4px 14px;margin:0 0 12px}
+  .prose table.cards td{border-bottom:1px dashed var(--line);padding:9px 0;text-align:left;white-space:normal;font-family:var(--sans);font-size:15px}
+  .prose table.cards td:last-child{border-bottom:0}
+  .prose table.cards td::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--accent-ink);margin-bottom:2px}
+}
+@media (max-width:860px){main.note-page{padding-top:28px}.crumbs{margin-bottom:28px}}
+@media (max-width:600px){.paper-foot .kbd{display:none}}
+@media (max-width:420px){
+  .wrap{padding:0 20px}
+  .prose{font-size:17px;line-height:1.64}
+  .prose .guard{padding:12px 14px;font-size:15px}
+  .prose .verify{padding:18px 16px 6px}
+  .prose ul,.prose ol{padding-left:1.2em}
+}
+
+@media print{
+  @page{margin:18mm 18mm 20mm}
+  :root{--bg:#fff;--panel:#f6f4ef;--muted:#444;--line:#bbb}
+  body{background:#fff;font-size:11pt;display:block}
+  header .lang,.crumbs,.paper-foot,footer .foot>span:last-child,.prose h2 .anchor{display:none!important}
+  header{border-bottom:1px solid #999}
+  .bar{height:auto;padding:0 0 8px}
+  .wrap{max-width:none;padding:0}
+  main.note-page{padding:18px 0 0}
+  .paper,.cite{max-width:none}
+  .prose{font-size:11pt;line-height:1.5}
+  .prose h1{font-size:22pt}
+  .prose h2{font-size:14pt;margin-top:1.4em;break-after:avoid;page-break-after:avoid}
+  .cite,.prose .guard,.prose .verify,.prose li{break-inside:avoid;page-break-inside:avoid}
+  .prose p{orphans:3;widows:3}
+  .prose a[href^="http"]::after{content:" <" attr(href) ">";font-family:var(--mono);font-size:8.5pt;color:#555;overflow-wrap:anywhere}
+  .prose .guard{font-size:10pt}
+  .tbl,.tbl.wide{overflow:visible!important;width:auto!important;left:auto!important;transform:none!important}
+  .prose table{font-size:8.5pt;table-layout:fixed}
+  .prose td,.prose th{padding:5px 8px 5px 0}
+  .prose tr{break-inside:avoid;page-break-inside:avoid}
+  .prose thead{display:table-header-group}
+  .prose ol.refs{font-size:9.5pt}
+  .prose ol.refs a[href^="http"]::after,.prose a.bare::after,.prose a[href^="#"]::after{content:none}
+  .prose .doiline a::after{content:none}
+  .files a::after{content:none}
+  footer{margin-top:20px;border-top:1px solid #999}
+  .foot{padding:8px 0 0;font-size:9pt}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+<noscript><style>
+/* Without JS: both language versions of the article are shown, EN first, then RU. */
+.paper[data-lang]{display:block}
+.nojs-sep{display:block;max-width:var(--measure);margin:56px auto;border-top:1px dashed var(--line);padding-top:10px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+header .lang{display:none}
+</style></noscript>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand js-keep-lang" href="../../../" aria-label="PeGamBo">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#111a1f"/><circle cx="10" cy="11" r="3" fill="#e8b04a"/><circle cx="22" cy="9" r="2.4" fill="#f2efe8"/><circle cx="17" cy="22" r="3.2" fill="#f2efe8"/><path d="M10 11 22 9 17 22Z" fill="none" stroke="#f2efe8" stroke-width="1.2"/></svg>
+      PeGamBo
+    </a>
+    <div class="lang" role="group" aria-label="Language / Язык">
+      <button type="button" data-set="en" aria-pressed="true">EN</button>
+      <button type="button" data-set="ru" aria-pressed="false">RU</button>
+    </div>
+  </div>
+</header>
+
+<!-- main:start -->
+<main class="wrap note-page repro-page">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a class="js-keep-lang" href="../../../">PeGamBo</a><span class="sep" aria-hidden="true">/</span>
+    <span data-lang="en">Research notes</span><span data-lang="ru">Научные заметки</span><span class="sep" aria-hidden="true">/</span>
+    <a class="js-keep-lang" href="../"><span data-lang="en">The Dark Sector as Bookkeeping: Four Measurable…</span><span data-lang="ru">Тёмный сектор как бухгалтерия: четыре измеримых…</span></a>
+  </nav>
+  <div class="repro">
+    <p class="paper-kicker"><i aria-hidden="true"></i><span data-lang="en">Research note · reproduction</span><span data-lang="ru">Научная заметка · воспроизведение</span></p>
+    <h1><span data-lang="en">Reproduction materials</span><span data-lang="ru">Материалы для воспроизведения</span></h1>
+    <p class="lead"><span data-lang="en">Code, our result tables and the environment description for independent checks of sections 2 and 3 of the note “The Dark Sector as Bookkeeping: Four Measurable Properties Instead of a Name”. Each section is self-contained: a README with run instructions, scripts and results. The PeGamBo computational core is not included.</span><span data-lang="ru">Код, полученные нами таблицы и описание окружения для независимой проверки разделов 2 и 3 заметки «Тёмный сектор как бухгалтерия: четыре измеримых свойства вместо имени». Каждый раздел — самостоятельный набор: README с инструкцией запуска, скрипты и результаты. Вычислительное ядро PeGamBo сюда не входит.</span></p>
+    <p class="meta"><a class="js-keep-lang" href="../"><span data-lang="en">← Back to the note</span><span data-lang="ru">← К заметке</span></a><span data-lang="en">rev. 2, 19 November 2026</span><span data-lang="ru">ред. 2, 19 ноября 2026</span><span data-lang="en">Archived copy: DOI <a href="https://doi.org/10.5281/zenodo.24372606" rel="noopener" target="_blank">10.5281/zenodo.24372606</a></span><span data-lang="ru">Архивная копия: DOI <a href="https://doi.org/10.5281/zenodo.24372606" rel="noopener" target="_blank">10.5281/zenodo.24372606</a></span></p>
+    <a class="zip" href="pegambo-dark-ledger-repro.zip" download><span data-lang="en">Download everything as one archive</span><span data-lang="ru">Скачать всё одним архивом</span> <small>.zip · 535.3 KB</small></a>
+  <section class="rsec" id="vortex" aria-labelledby="rs-1">
+    <p class="k"><span data-lang="en">Section 2 of the note · vortex/ · 14 files</span><span data-lang="ru">Раздел 2 заметки · vortex/ · 14 файлов</span></p>
+    <h2 id="rs-1"><span data-lang="en">Statistics of random-wave zeros</span><span data-lang="ru">Статистика нулей случайной волны</span></h2>
+    <p class="desc"><span data-lang="en">Reproduction of known laws for the zeros of an isotropic monochromatic wave: same-sign pair correlation, the share of opposite-sign nearest neighbours, and the 1/m law for overlaid independent fields.</span><span data-lang="ru">Воспроизведение известных законов для нулей изотропной монохроматической волны: парная корреляция одноимённых нулей, доля разноимённых ближайших соседей, закон 1/m при наложении независимых полей.</span></p>
+    <ul class="files">
+<li><a href="vortex/README_en.txt"><span class="fn">README_<wbr>en<wbr>.txt</span><span class="fs">2.9 KB</span></a></li>
+<li><a href="vortex/README_ru.txt"><span class="fn">README_<wbr>ru<wbr>.txt</span><span class="fs">4.5 KB</span></a></li>
+<li><a href="vortex/analyze.py"><span class="fn">analyze<wbr>.py</span><span class="fs">12.5 KB</span></a></li>
+<li><a href="vortex/reproduce.py"><span class="fn">reproduce<wbr>.py</span><span class="fs">2.9 KB</span></a></li>
+<li><a href="vortex/requirements.txt"><span class="fn">requirements<wbr>.txt</span><span class="fs">117 B</span></a></li>
+<li><a href="vortex/results.json"><span class="fn">results<wbr>.json</span><span class="fs">746.6 KB</span></a></li>
+<li><a href="vortex/simulate.py"><span class="fn">simulate<wbr>.py</span><span class="fs">4.5 KB</span></a></li>
+<li><a href="vortex/theory.py"><span class="fn">theory<wbr>.py</span><span class="fs">2.0 KB</span></a></li>
+<li><a href="vortex/logs/analyze.log"><span class="fn"><span class="dir">logs/</span>analyze<wbr>.log</span><span class="fs">1.2 KB</span></a></li>
+<li><a href="vortex/logs/analyze_high.log"><span class="fn"><span class="dir">logs/</span>analyze_<wbr>high<wbr>.log</span><span class="fs">601 B</span></a></li>
+<li><a href="vortex/logs/analyze_verified.log"><span class="fn"><span class="dir">logs/</span>analyze_<wbr>verified<wbr>.log</span><span class="fs">600 B</span></a></li>
+<li><a href="vortex/logs/simulation.log"><span class="fn"><span class="dir">logs/</span>simulation<wbr>.log</span><span class="fs">1.1 KB</span></a></li>
+<li><a href="vortex/logs/simulation_extra.log"><span class="fn"><span class="dir">logs/</span>simulation_<wbr>extra<wbr>.log</span><span class="fs">1.1 KB</span></a></li>
+<li><a href="vortex/logs/simulation_high.log"><span class="fn"><span class="dir">logs/</span>simulation_<wbr>high<wbr>.log</span><span class="fs">1.1 KB</span></a></li>
+</ul>
+    <details class="readme" data-lang="en"><summary>README — show text · README_en.txt</summary><pre>PHASE VORTICES IN THE BERRY RANDOM-WAVE MODEL
+This package independently reproduces known statistics of an isotropic 2D
+monochromatic complex Gaussian wave. Comparisons with the first edition
+of the note are in the correction table in the note itself.
+
+RUN
+  python -m venv .venv
+  source .venv/bin/activate
+  python -m pip install -r requirements.txt
+  python reproduce.py --smoke
+  python reproduce.py
+
+On Windows PowerShell, use .\.venv\Scripts\Activate.ps1 to activate the
+environment. The smoke run exercises the full pipeline on small windows.
+Its output in smoke_output/ is not a statistical reproduction. The full
+run saves new results, logs and regenerated point sets in reproduced/.
+Use --output-dir DIR to change the destination, or --reuse-fields to
+reanalyze fields already generated there. The shipped results and logs
+are not overwritten. Raw point sets are not included in this package.
+
+METHOD
+The reference run uses 64 fields, 640 planar modes and 463,113 detected
+zeros in analysis windows of side 48 wavelengths, surrounded by a guard
+zone of 3 wavelengths. Plaquette phase winding identifies vortices.
+The grid steps are 0.10, 0.05 and 0.025 wavelengths; 32 of the same fields
+are checked at 0.0125. Newton refinement uses the original wave sum.
+The overlay experiment pools zero coordinates, not complex amplitudes.
+Uncertainties below are one bootstrap standard error, over realizations
+or, for the overlay analysis, eight independent blocks of realizations.
+
+REFERENCE RESULTS
+  Same-sign asymptote: g_same(r) ~ 1.80451063 (r/lambda)^3 as r -&gt; 0.
+  At r = 0.1 lambda: g_same = 0.00192375 (theory).
+  For 0.09 &lt;= r/lambda &lt; 0.11: 0.00241 +/- 0.00079 (verified roots).
+  Opposite-sign nearest neighbour: 78.712%, SE 0.071 percentage points
+  (one directed link per zero).
+  Nearest-neighbour mode, irrespective of sign: 0.4574 +/- 0.0025 lambda.
+  Mode for links whose actual nearest neighbour has opposite sign:
+  0.4189 +/- 0.0042 lambda.
+  Overlays (m = 1, 2, 4, 8), KS distance to the matching Poisson
+  nearest-neighbour CDF: 0.3402 +/- 0.0006, 0.1105 +/- 0.0011,
+  0.0490 +/- 0.0012, 0.0237 +/- 0.0006. At fixed r/lambda,
+  the population pair-correlation excess g_m(r)-1 is (g_1(r)-1)/m.
+
+LIMITS
+The simulation is an idealized null model, not apparatus data. Small
+same-sign distances have few counts and are sensitive to grid spacing,
+binning and zero verification. Modes depend on sign selection and
+smoothing. Finite overlays are not exactly Poisson, and measured
+distances to Poisson depend on the metric and normalization.
+
+REFERENCES
+Berry &amp; Dennis (2000), pair correlations, density and ring spectrum:
+https://doi.org/10.1098/rspa.2000.0602
+Shvartsman &amp; Freund (1994), nearest-neighbour sign anticorrelation:
+https://doi.org/10.1103/PhysRevLett.72.1008
+Saichev, Berggren &amp; Sadreev (2001), nearest-neighbour distances:
+https://arxiv.org/abs/nlin/0012019
+Dennis (2001), partial pair correlations and their short-distance limit:
+https://eprints.soton.ac.uk/29376/1/SPIE4403_13.pdf
+</pre></details>
+<details class="readme" data-lang="ru"><summary>README — показать текст · README_ru.txt</summary><pre>ФАЗОВЫЕ ВИХРИ В МОДЕЛИ СЛУЧАЙНОЙ ВОЛНЫ БЕРРИ
+
+Пакет независимо воспроизводит известные статистики двумерной
+изотропной монохроматической комплексной гауссовой волны. Сравнение
+с первой редакцией заметки приведено в таблице исправлений самой заметки.
+
+ЗАПУСК
+  python -m venv .venv
+  source .venv/bin/activate
+  python -m pip install -r requirements.txt
+  python reproduce.py --smoke
+  python reproduce.py
+
+В Windows PowerShell активация: .\.venv\Scripts\Activate.ps1. Быстрый
+прогон проверяет весь конвейер на малых окнах; числа в smoke_output/
+не заменяют полноценный расчёт. Полный прогон сохраняет новые результаты,
+журналы и множества нулей в reproduced/. Папку можно изменить через
+--output-dir DIR; --reuse-fields повторно анализирует уже созданные там
+поля. Поставляемые результаты и журналы не перезаписываются. Исходные
+множества нулей в пакет не включены.
+
+МЕТОД
+В контрольном прогоне 64 поля, 640 плоских мод, 463 113 обнаруженных
+нулей. Сторона окна анализа равна 48 длинам волны, защитная полоса
+равна 3 длинам волны. Вихри найдены по обходу фазы по ячейке сетки.
+Шаги сетки 0.10, 0.05 и 0.025 длины волны; 32 из тех же полей проверены
+также при шаге 0.0125. Уточнение Ньютона использует исходную сумму волн.
+При наложении объединяются координаты нулей, не комплексные амплитуды.
+После знака «±» указана одна бутстреп-стандартная ошибка по реализациям,
+а при наложении полей она рассчитана по восьми независимым блокам.
+
+КОНТРОЛЬНЫЕ РЕЗУЛЬТАТЫ
+  Одноимённые пары: g_same(r) ~ 1.80451063 (r/λ)^3 при r → 0.
+  При r = 0.1λ: g_same = 0.00192375 (теория).
+  При 0.09 ≤ r/λ &lt; 0.11: 0.00241 ± 0.00079 (проверенные корни).
+  Разноимённый ближайший сосед: 78.712%, ошибка 0.071 п.п.
+  (на каждый нуль приходится одна направленная связь).
+  Мода расстояния до ближайшего соседа без отбора по знаку:
+  0.4574 ± 0.0025λ; у фактически разноимённых связей: 0.4189 ± 0.0042λ.
+  Наложение m = 1, 2, 4, 8 полей: расстояние Колмогорова–Смирнова
+  до пуассоновской функции распределения при той же интенсивности:
+  0.3402 ± 0.0006; 0.1105 ± 0.0011; 0.0490 ± 0.0012; 0.0237 ± 0.0006.
+  При фиксированном r/λ верно g_m(r) − 1 = [g_1(r) − 1]/m.
+
+ОГРАНИЧЕНИЯ
+Это идеализированная нулевая модель, не данные прибора. Близких
+одноимённых пар мало; результат зависит от сетки, корзин и проверки
+корней. Мода зависит от отбора по знаку и сглаживания. Конечное
+наложение не становится точно пуассоновским; измеренное расстояние
+до Пуассона зависит от метрики и нормировки.
+
+ЛИТЕРАТУРА
+Berry и Dennis (2000): корреляции, плотность и кольцевой спектр.
+https://doi.org/10.1098/rspa.2000.0602
+Shvartsman и Freund (1994): антикорреляция знаков ближайших соседей.
+https://doi.org/10.1103/PhysRevLett.72.1008
+Saichev, Berggren и Sadreev (2001): расстояния до ближайших соседей.
+https://arxiv.org/abs/nlin/0012019
+Dennis (2001): частичные корреляции и их предел на малых расстояниях.
+https://eprints.soton.ac.uk/29376/1/SPIE4403_13.pdf
+</pre></details>
+  </section>
+  <section class="rsec" id="fp16" aria-labelledby="rs-2">
+    <p class="k"><span data-lang="en">Section 3 of the note · fp16/ · 34 files</span><span data-lang="ru">Раздел 3 заметки · fp16/ · 34 файлов</span></p>
+    <h2 id="rs-2"><span data-lang="en">fp16 overflow and attention graphs in Pythia-160M</span><span data-lang="ru">fp16, переполнение и графы внимания Pythia-160M</span></h2>
+    <p class="desc"><span data-lang="en">Runs in fp16, fp32 and fp64: locating the first non-finite value, checking the “dead layers”, and the share of weak edges in attention graphs.</span><span data-lang="ru">Прогоны в fp16, fp32 и fp64: поиск первого нечислового значения, проверка «мёртвых слоёв» и доли слабых рёбер в графах внимания.</span></p>
+    <ul class="files">
+<li><a href="fp16/README_en.txt"><span class="fn">README_<wbr>en<wbr>.txt</span><span class="fs">4.1 KB</span></a></li>
+<li><a href="fp16/README_ru.txt"><span class="fn">README_<wbr>ru<wbr>.txt</span><span class="fs">5.7 KB</span></a></li>
+<li><a href="fp16/environment.txt"><span class="fn">environment<wbr>.txt</span><span class="fs">2.1 KB</span></a></li>
+<li><a href="fp16/requirements.txt"><span class="fn">requirements<wbr>.txt</span><span class="fs">242 B</span></a></li>
+<li><a href="fp16/run_all.sh"><span class="fn">run_<wbr>all<wbr>.sh</span><span class="fs">1.2 KB</span></a></li>
+<li><a href="fp16/s1_format_facts.py"><span class="fn">s1_<wbr>format_<wbr>facts<wbr>.py</span><span class="fs">2.1 KB</span></a></li>
+<li><a href="fp16/s2_run_model.py"><span class="fn">s2_<wbr>run_<wbr>model<wbr>.py</span><span class="fs">5.7 KB</span></a></li>
+<li><a href="fp16/s2b_diagnose_nan.py"><span class="fn">s2b_<wbr>diagnose_<wbr>nan<wbr>.py</span><span class="fs">3.6 KB</span></a></li>
+<li><a href="fp16/s2c_attn_internals.py"><span class="fn">s2c_<wbr>attn_<wbr>internals<wbr>.py</span><span class="fs">2.1 KB</span></a></li>
+<li><a href="fp16/s2d_overflow_location.py"><span class="fn">s2d_<wbr>overflow_<wbr>location<wbr>.py</span><span class="fs">2.1 KB</span></a></li>
+<li><a href="fp16/s3_analyze.py"><span class="fn">s3_<wbr>analyze<wbr>.py</span><span class="fs">7.2 KB</span></a></li>
+<li><a href="fp16/s4_summary.py"><span class="fn">s4_<wbr>summary<wbr>.py</span><span class="fs">2.9 KB</span></a></li>
+<li><a href="fp16/s5_bins.py"><span class="fn">s5_<wbr>bins<wbr>.py</span><span class="fs">1.3 KB</span></a></li>
+<li><a href="fp16/s6_pooled_knife.py"><span class="fn">s6_<wbr>pooled_<wbr>knife<wbr>.py</span><span class="fs">1.2 KB</span></a></li>
+<li><a href="fp16/results/M_grid.csv"><span class="fn"><span class="dir">results/</span>M_<wbr>grid<wbr>.csv</span><span class="fs">410.6 KB</span></a></li>
+<li><a href="fp16/results/M_ranges.csv"><span class="fn"><span class="dir">results/</span>M_<wbr>ranges<wbr>.csv</span><span class="fs">44.8 KB</span></a></li>
+<li><a href="fp16/results/per_head.csv"><span class="fn"><span class="dir">results/</span>per_<wbr>head<wbr>.csv</span><span class="fs">846.8 KB</span></a></li>
+<li><a href="fp16/results/per_layer.csv"><span class="fn"><span class="dir">results/</span>per_<wbr>layer<wbr>.csv</span><span class="fs">152.1 KB</span></a></li>
+<li><a href="fp16/results/s1_format_facts.json"><span class="fn"><span class="dir">results/</span>s1_<wbr>format_<wbr>facts<wbr>.json</span><span class="fs">6.0 KB</span></a></li>
+<li><a href="fp16/results/s2_run_log.json"><span class="fn"><span class="dir">results/</span>s2_<wbr>run_<wbr>log<wbr>.json</span><span class="fs">41.2 KB</span></a></li>
+<li><a href="fp16/results/s2b_nan_diagnosis.json"><span class="fn"><span class="dir">results/</span>s2b_<wbr>nan_<wbr>diagnosis<wbr>.json</span><span class="fs">19.4 KB</span></a></li>
+<li><a href="fp16/results/s2c_attn_internals.json"><span class="fn"><span class="dir">results/</span>s2c_<wbr>attn_<wbr>internals<wbr>.json</span><span class="fs">62.0 KB</span></a></li>
+<li><a href="fp16/results/s2d_overflow_location.json"><span class="fn"><span class="dir">results/</span>s2d_<wbr>overflow_<wbr>location<wbr>.json</span><span class="fs">15.4 KB</span></a></li>
+<li><a href="fp16/results/s5_top8_bins_fp64true.csv"><span class="fn"><span class="dir">results/</span>s5_<wbr>top8_<wbr>bins_<wbr>fp64true<wbr>.csv</span><span class="fs">2.2 KB</span></a></li>
+<li><a href="fp16/results/s6_pooled_knife.csv"><span class="fn"><span class="dir">results/</span>s6_<wbr>pooled_<wbr>knife<wbr>.csv</span><span class="fs">3.7 KB</span></a></li>
+<li><a href="fp16/results/summary_deep_ranges.csv"><span class="fn"><span class="dir">results/</span>summary_<wbr>deep_<wbr>ranges<wbr>.csv</span><span class="fs">1.6 KB</span></a></li>
+<li><a href="fp16/results/summary_layers_arith.csv"><span class="fn"><span class="dir">results/</span>summary_<wbr>layers_<wbr>arith<wbr>.csv</span><span class="fs">1.3 KB</span></a></li>
+<li><a href="fp16/results/summary_layers_code.csv"><span class="fn"><span class="dir">results/</span>summary_<wbr>layers_<wbr>code<wbr>.csv</span><span class="fs">1.3 KB</span></a></li>
+<li><a href="fp16/results/summary_layers_prose.csv"><span class="fn"><span class="dir">results/</span>summary_<wbr>layers_<wbr>prose<wbr>.csv</span><span class="fs">1.3 KB</span></a></li>
+<li><a href="fp16/results/summary_nonfinite.csv"><span class="fn"><span class="dir">results/</span>summary_<wbr>nonfinite<wbr>.csv</span><span class="fs">1.2 KB</span></a></li>
+<li><a href="fp16/results/summary_tables.md"><span class="fn"><span class="dir">results/</span>summary_<wbr>tables<wbr>.md</span><span class="fs">27.4 KB</span></a></li>
+<li><a href="fp16/texts/arith.txt"><span class="fn"><span class="dir">texts/</span>arith<wbr>.txt</span><span class="fs">406 B</span></a></li>
+<li><a href="fp16/texts/code.txt"><span class="fn"><span class="dir">texts/</span>code<wbr>.txt</span><span class="fs">682 B</span></a></li>
+<li><a href="fp16/texts/prose.txt"><span class="fn"><span class="dir">texts/</span>prose<wbr>.txt</span><span class="fs">860 B</span></a></li>
+</ul>
+    <details class="readme" data-lang="en"><summary>README — show text · README_en.txt</summary><pre>Independent check of fp16 numerical behaviour in Pythia-160M attention graphs
+=============================================================================
+
+WHAT IS MEASURED
+EleutherAI/pythia-160m (revision 50f5173d932e8e61f858120bcb800b97af589f46; 12 layers x 12 heads)
+is run on three probe texts (texts/: prose 172 tokens, code 233, arithmetic 181) in several
+precision modes. For every layer and head we record:
+ - where Inf/NaN first appears (module hooks plus instrumentation of q, k, QK^T, softmax, A@V);
+ - the fraction of exact zeros and the smallest non-zero attention weights A;
+ - the graph: W = (A + A^T)/2 without the diagonal, top-8 neighbours per node; the fraction of edges
+   below 2^-14 with the threshold applied to A (before symmetrisation) and to W; edge agreement
+   with fp32 (Jaccard); number of connected components;
+ - M = log10(w_min/eps) for 5 explicit definitions of w_min and eps in {2^-14, 2^-24, 2^-126, 2^-149}.
+
+MODES (s2_run_model.py)
+ fp32              reference
+ fp64_true         model.double(), softmax in fp64 (control)
+ fp64              model.double() with the stock HF eager attention (its softmax runs in fp32)
+ fp16              model.half(), stock HF eager attention
+ fp16_puresoftmax  as fp16, softmax in fp16
+ fp16_prescale     as fp16, q multiplied by the scale before the matmul
+ fp16_upcastQK     fp16 model, QK^T and softmax in fp32, A stored in fp16 (isolates fp16 storage of A)
+ fp16_sdpa         stock SDPA (A is not returned; only finiteness is checked)
+
+HOW TO RUN
+ pip install --index-url https://download.pytorch.org/whl/cpu torch==2.15.0
+ pip install -r requirements.txt
+ ./run_all.sh       full run, ~10 min on 2 CPU cores, ~2 GB RAM; raw A tensors go to raw/ (~160 MB)
+ ./run_all.sh 1     step 1 only (format facts, no model download)
+Environment of the published results: environment.txt (Python 3.14.8, torch 2.15.0+cpu,
+transformers 5.23.0, Intel Xeon with AVX-512, 2 threads). The computation is deterministic
+(eval mode, no dropout).
+
+KEY RESULTS (results/)
+1. fp16 format (s1_format_facts.json): smallest normal 2^-14 = 6.10e-5, smallest subnormal
+   2^-24 = 5.96e-8, epsilon 2^-10, maximum 65504. fp16 softmax on CPU keeps subnormal values;
+   exact zero only for values &lt;= 2^-25 ~ 2.98e-8.
+2. Inf/NaN (summary_nonfinite.csv, s2c_attn_internals.json, s2d_overflow_location.json): in fp16
+   the unscaled q·k^T exceeds 65504 (in fp32 up to 79305 in layer 4 on prose), producing +Inf;
+   softmax returns NaN, which propagates. Fully NaN: layers 5–11 (prose, code), 6–11 (arithmetic);
+   layers counted from zero. fp32, fp64, fp16_upcastQK and fp16_sdpa are finite throughout;
+   fp16_prescale postpones the failure to layer 10.
+3. Fraction of top-8 edges below 2^-14 in layers 8–11 (s6_pooled_knife.csv; pooled over heads and
+   nodes; fp64_true and fp32 agree to &lt;= 0.5 percentage points):
+      threshold on A: prose 43.2–71.7 %, code 33.7–65.8 %, arithmetic 27.4–70.8 %
+      threshold on W: prose 46.3–72.6 %, code 37.2–67.2 %, arithmetic 30.2–72.2 %
+   Actually zeroed when A is stored in fp16 (fp16_upcastQK): 7.9–61.8 %; the rest are kept as
+   subnormals.
+4. Unthresholded top-8 graphs are connected (1 component) in every layer of every finite mode
+   (per_layer.csv, n_comp_top8). In NaN layers the graph is undefined; if NaN is replaced by zero,
+   all edges are zero.
+5. M (M_grid.csv, M_ranges.csv) varies by tens of orders of magnitude with w_min and eps.
+   In fp16 with w_min = smallest non-zero weight and eps = 2^-24, M = 0.00 in every layer.
+
+FILES
+ s1…s6, run_all.sh   scripts (order and purpose listed in run_all.sh)
+ texts/              probe texts
+ results/per_head.csv, per_layer.csv   all metrics per (text, mode, layer, head) / per layer
+ results/summary_*.csv, summary_tables.md   summary tables
+
+LIMITATIONS
+ - CPU only; GPU behaviour (including flush-to-zero modes of specific libraries) was not tested.
+ - One model and one revision; three short texts (172–233 tokens), batch size 1.
+ - fp16_upcastQK and fp64_true are control constructions, not stock configurations.
+ - M is a diagnostic quantity; no definition of w_min is singled out as canonical.
+</pre></details>
+<details class="readme" data-lang="ru"><summary>README — показать текст · README_ru.txt</summary><pre>Независимая проверка числового поведения fp16 в графах внимания Pythia-160M
+============================================================================
+
+ЧТО ИЗМЕРЯЕТСЯ
+Модель EleutherAI/pythia-160m (ревизия 50f5173d932e8e61f858120bcb800b97af589f46; 12 слоёв x 12 голов)
+прогоняется на трёх зондовых текстах (texts/: проза 172 токена, код 233, арифметика 181) в нескольких
+режимах точности. По каждому слою и голове записываются:
+ - где впервые появляются Inf/NaN (хуки на модулях и инструментация q, k, QK^T, softmax, A@V);
+ - доля точных нулей и минимальные ненулевые веса внимания A;
+ - граф: W = (A + A^T)/2 без диагонали, top-8 соседей на узел; доля рёбер ниже 2^-14 при пороге
+   на A (до симметризации) и на W; совпадение рёбер с fp32 (Jaccard), число компонент;
+ - M = log10(w_min/eps) при 5 явных определениях w_min и eps из {2^-14, 2^-24, 2^-126, 2^-149}.
+
+РЕЖИМЫ (s2_run_model.py)
+ fp32              эталон
+ fp64_true         model.double(), softmax в fp64 (контроль)
+ fp64              model.double() в штатном eager HF (softmax там считается в fp32)
+ fp16              model.half(), штатное eager-внимание HF
+ fp16_puresoftmax  как fp16, но softmax в fp16
+ fp16_prescale     как fp16, но q умножается на масштаб до matmul
+ fp16_upcastQK     модель в fp16, QK^T и softmax в fp32, A хранится в fp16 (изолирует хранение A в fp16)
+ fp16_sdpa         штатный SDPA (веса A не выдаются; проверяется только конечность)
+
+ЗАПУСК
+ pip install --index-url https://download.pytorch.org/whl/cpu torch==2.15.0
+ pip install -r requirements.txt
+ ./run_all.sh       полный прогон, ~10 мин на 2 ядрах CPU, ~2 ГБ RAM; сырые A пишутся в raw/ (~160 МБ)
+ ./run_all.sh 1     только шаг 1 (свойства формата, без загрузки модели)
+Окружение публикуемых результатов: environment.txt (Python 3.14.8, torch 2.15.0+cpu,
+transformers 5.23.0, Intel Xeon с AVX-512, 2 потока). Расчёт детерминирован (eval, без dropout).
+
+КЛЮЧЕВЫЕ РЕЗУЛЬТАТЫ (results/)
+1. Формат fp16 (s1_format_facts.json): минимальное нормальное 2^-14 = 6.10e-5, минимальное субнормальное
+   2^-24 = 5.96e-8, эпсилон 2^-10, максимум 65504. Softmax в fp16 на CPU сохраняет субнормальные
+   значения; точный ноль только для значений &lt;= 2^-25 ~ 2.98e-8.
+2. Inf/NaN (summary_nonfinite.csv, s2c_attn_internals.json, s2d_overflow_location.json): в fp16
+   неотмасштабированное q·k^T превышает 65504 (в fp32 до 79305 в слое 4 на прозе), появляется +Inf,
+   softmax даёт NaN, NaN распространяется дальше. Полностью NaN: слои 5–11 (проза, код), 6–11
+   (арифметика); счёт слоёв с нуля. В fp32, fp64, fp16_upcastQK и fp16_sdpa всё конечно;
+   fp16_prescale откладывает отказ до слоя 10.
+3. Доля top-8 рёбер ниже 2^-14 в слоях 8–11 (s6_pooled_knife.csv; пул по головам и узлам; fp64_true
+   и fp32 совпадают с точностью &lt;= 0.5 п.п.):
+      порог на A: проза 43.2–71.7 %, код 33.7–65.8 %, арифметика 27.4–70.8 %
+      порог на W: проза 46.3–72.6 %, код 37.2–67.2 %, арифметика 30.2–72.2 %
+   Реально обнуляются при хранении A в fp16 (fp16_upcastQK): 7.9–61.8 %; остальные хранятся
+   субнормальными.
+4. Графы top-8 без порога связны (1 компонента) во всех слоях во всех конечных режимах
+   (per_layer.csv, n_comp_top8). В NaN-слоях граф не определён; если NaN заменить нулём, все
+   рёбра нулевые.
+5. M (M_grid.csv, M_ranges.csv) меняется на десятки порядков в зависимости от w_min и eps.
+   В fp16 при w_min = наименьший ненулевой вес и eps = 2^-24 M = 0.00 во всех слоях.
+
+ФАЙЛЫ
+ s1…s6, run_all.sh   скрипты (порядок и назначение — в run_all.sh)
+ texts/              зондовые тексты
+ results/per_head.csv, per_layer.csv   все метрики по (текст, режим, слой, голова) / по слоям
+ results/summary_*.csv, summary_tables.md   сводные таблицы
+
+ОГРАНИЧЕНИЯ
+ - Только CPU; поведение на GPU (в т.ч. режимы flush-to-zero конкретных библиотек) не проверялось.
+ - Одна модель и одна ревизия; три коротких текста (172–233 токена), батч 1.
+ - Режимы fp16_upcastQK и fp64_true — контрольные конструкции, а не штатные конфигурации.
+ - M — диагностическая величина; ни одно определение w_min не выделено как каноническое.
+</pre></details>
+  </section>
+  </div>
+  <div class="paper-foot">
+    <a class="js-keep-lang" href="../"><span data-lang="en">← Back to the note</span><span data-lang="ru">← К заметке</span></a>
+    <a class="js-keep-lang" href="../../../"><span data-lang="en">PeGamBo home</span><span data-lang="ru">Главная PeGamBo</span></a>
+  </div>
+</main>
+<!-- main:end -->
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 PeGamBo · <span data-lang="en">Founder: Oleg Bortnikov</span><span data-lang="ru">Основатель: Олег Бортников</span></span>
+    <span><a class="js-mail" href="#contact" data-u="olleh" data-d="moc.obmagep"><span class="js-mail-text">hello [at] pegambo.com</span></a> · <a href="https://orcid.org/0009-0004-6221-5389" rel="noopener" target="_blank">ORCID</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btns=document.querySelectorAll('.lang button');
+  var titles={"en": "Reproduction materials — The Dark Sector as Bookkeeping: Four Measurable Properties… — PeGamBo", "ru": "Материалы для воспроизведения — Тёмный сектор как бухгалтерия: четыре измеримых свойства… — PeGamBo"};
+  function sync(){document.querySelectorAll('a.js-keep-lang').forEach(function(a){var b=a.getAttribute('data-href')||a.getAttribute('href').split('?')[0];a.setAttribute('data-href',b);a.setAttribute('href',b+'?lang='+root.lang);});}
+  function set(l){root.lang=l;document.title=titles[l];btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l)});sync();}
+  var q=(location.search.match(/lang=(en|ru)/)||[])[1];
+  set(q||((navigator.language||'').toLowerCase().indexOf('ru')===0?'ru':'en'));
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+})();
+</script>
+<script>
+(function(){
+  function rev(s){return s.split('').reverse().join('');}
+  document.querySelectorAll('.js-mail').forEach(function(a){
+    var addr=rev(a.getAttribute('data-u'))+String.fromCharCode(64)+rev(a.getAttribute('data-d'));
+    a.setAttribute('href','mai'+'lto:'+addr);
+    var s=a.querySelector('.js-mail-text'); if(s) s.textContent=addr;
+  });
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "65e535b5e087427fa662f7d919895b83"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
